@@ -37,3 +37,5 @@ console.log(
     port +
     '.'
 );
+
+module.exports.app = app;

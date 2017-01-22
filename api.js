@@ -34,14 +34,15 @@ module.exports = function(app) {
                         value: req.body.value
                     }, function() {
                         console.log('Inserted fiddle at', fiddle + '.');
+                        res.json({      //send response after saving fiddle
+                            saved: true,
+                            fiddle: fiddle
+                        });
                     });
                 }
             });
-        }
-
-        res.json({
-            saved: true,
-            fiddle: fiddle
-        });
+        } else {
+            res.status(400).send();
+        } 
     });
 };
