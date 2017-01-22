@@ -27,6 +27,7 @@
     "mongodb": "^2.2.5"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.13.1",
     "grunt": "^1.0.1",
     "grunt-assets-inline": "0.1.14",
@@ -39,10 +40,13 @@
     "grunt-eslint": "^19.0.0",
     "grunt-inline": "0.3.6",
     "grunt-jscs": "^3.0.1",
-    "load-grunt-tasks": "^3.5.2"
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
   },
   "scripts": {
-    "test": "grunt test",
+    "test": "grunt test && npm run test-node",
+    "test-node":"mocha test/*.test.js",
     "start": "grunt build && node app.js",
     "build": "grunt build"
   }
