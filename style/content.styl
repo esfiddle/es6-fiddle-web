@@ -85,17 +85,94 @@
 .content {
     clearfix();
     position: relative;
-    width: 93%;
+    width: 100%;
     min-width: 600px;
-    height: 508px;
+    height: calc(100% - 22px);
     margin-top: 4px;
     font-size: 0;
     margin: 0 auto;
 
+    .code-wrapper {
+      display: flex;
+      flex-direction: row;
+      height: calc(100% - 57px);
+
+      &:not(.column) .result-wrapper {
+        flex: 1;
+      }
+
+      &.column {
+        flex-direction: column;
+
+
+        .resizer {
+          bottom: -50px;
+          right: 0;
+          width: 100%;
+          height: 100px;
+          cursor: row-resize;
+        }
+      }
+    }
+
     .selector-wrapper {
-        position: absolute;
-        left: 0;
-        top: 10px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+
+        select {
+
+          /* styling */
+          background-color: white;
+          border: 1px solid #ddd;
+          border-radius: 2px;
+          display: inline-block;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          font-size: 14px;
+          margin-right: 10px;
+          background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+          background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+          background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+          background-repeat: no-repeat;
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+        }
+
+        select:focus {
+          background-image:
+            linear-gradient(45deg, green 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, green 50%),
+            linear-gradient(to right, #ccc, #ccc);
+          background-position:
+            calc(100% - 15px) 1em,
+            calc(100% - 20px) 1em,
+            calc(100% - 2.5em) 0.5em;
+          background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+          background-repeat: no-repeat;
+          border-color: #983e50;
+          outline: 0;
+        }
+
+
+        select:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 #000;
+        }
+
     }
 
     .examples {
@@ -136,8 +213,20 @@
     }
 
     .fiddle-wrapper {
-        @extend .content-item;
-        margin-right: 1%;
+      flex-basis: 50%;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      position: relative;
+
+      .resizer {
+        width: 100px;
+        height: 100%;
+        position: absolute;
+        right: -80px;
+        bottom: 0;
+        cursor: col-resize;
+        z-index: 2;
+      }
 
         .fiddle-header {
             height: 58px;
@@ -230,7 +319,7 @@
 
         .fiddle {
             width: 100%;
-            height: 450px;
+            height: calc(100% - 58px);
 
             .line-error {
                 background-color: #bf3030;
@@ -240,7 +329,10 @@
     }
 
     .result-wrapper {
-        @extend .content-item;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      flex-grow: 1;
+      position: relative;
 
         .result-header {
             height: 58px;
@@ -259,10 +351,11 @@
         }
 
         .result {
-            height: 450px;
             width: 100%;
             border: none;
+            height: calc(100% - 58px);
             transition: background-color 0.5s;
+            position: absolute;
         }
     }
 }

@@ -81,11 +81,11 @@ module.exports = function(grunt) {
             }
         },
         inline: {
-            dist: {
+            index: {
                 src: 'src/index.html',
                 dest: 'static/index.html'
             },
-            dist: {
+            about: {
                 src: 'src/about.html',
                 dest: 'static/about.html'
             }
