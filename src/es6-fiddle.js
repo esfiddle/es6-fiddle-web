@@ -99,8 +99,6 @@
         setVerticalStyle();
         saveLayoutOption('vertical');
         fiddleWrapper.removeAttribute('style');
-        startX = fiddleWrapper.clientX;
-        startY = fiddleWrapper.clientY;
     };
 
     // Onclick of the horizontal button then make the page visually horizontal
@@ -109,8 +107,6 @@
         setHorizontalStyle();
         saveLayoutOption('horizontal');
         fiddleWrapper.removeAttribute('style');
-        startX = fiddleWrapper.clientX;
-        startY = fiddleWrapper.clientY;
     };
 
     // When the dark mode button is clicked, toggle the dark mode setting

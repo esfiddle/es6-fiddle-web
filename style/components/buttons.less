@@ -1,0 +1,119 @@
+.icon-btn {
+    background-color: @wine;
+    color: @white;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.5s;
+}
+
+.loginBtns,
+.layoutBtns {
+  cursor: pointer;
+  color: @white;
+  padding: 3px;
+}
+
+.loginBtns {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.layoutBtns {
+    background-color: @white;
+    padding: 3px;
+    color: @wine;
+}
+
+.dark-mode {
+    height: 20px;
+    width: 20px;
+    background-image: url('/images/dark.png');
+    background-size: contain;
+    cursor: pointer;
+}
+
+.run {
+    .icon-btn;
+    background-image: url('/images/run.png');
+}
+
+.lint {
+    .icon-btn;
+    background-image: url('/images/lint.png');
+}
+
+.save {
+    .icon-btn;
+    background-image: url('/images/save.png');
+}
+
+.share {
+    .icon-btn;
+    background-image: url('/images/share.png');
+    display: none;
+
+    .share-drop {
+        color: @wine;
+        background: @white;
+        display: none;
+        position: absolute;
+        height: 150px;
+        width: 250px;
+        z-index: 10;
+        top: 40px;
+        right: -220px;
+        line-height: 25px;
+        font-size: 12px;
+        text-align: left;
+        box-shadow: 0 2px 25px @gray-dark;
+        border-right: none;
+        padding-left: 10px;
+        box-sizing: border-box;
+
+        label {
+            display: block;
+        }
+
+        input {
+            display: block;
+            color: @gray-dark;
+            width: 90%;
+        }
+
+        #share-embed {
+            margin-bottom: 10px;
+        }
+
+        .tweet {
+            background: url('/images/twitter.png') no-repeat;
+            color: @wine;
+            padding-left: 25px;
+            margin-top: 10px;
+            width: 75px;
+            text-decoration: none;
+            box-sizing: border-box;
+
+            &:hover {
+                color: lighten(@wine, 25%);
+            }
+        }
+    }
+
+    &:hover {
+        .share-drop {
+            display: block;
+        }
+    }
+}
+
+.github-logo {
+    width: 20px;
+    float: right;
+}

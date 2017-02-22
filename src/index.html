@@ -5,6 +5,7 @@
         <meta name="Description" content="Try out ES6+ features and share them with your friends, right in your browser!
 With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) with our preset samples or create your own snippets to share with others.">
         <meta name="Keywords" content="ES6, ES7, ES8, Ecmascript 2015, ES2015, ES2016, Ecmascript, Javascript, JS, TC39, ES2017, Ecmascript 2016">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>ESFiddle</title>
         <link rel="stylesheet" href="../static/style/es6-fiddle.css?__inline=true">
@@ -13,14 +14,19 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
     </head>
     <body>
         <div class="header">
+          <nav>
             <span class="loginBtns"><a href="/auth/github">Login</a></span>
-            <span class="loginBtns"><a href="/github/onlyAuthoisedUser">Profile</a></span>
             <span class="loginBtns"><a href="/github/logout">Logout</a></span>
-            <span class="about">About</span>
+            <span class="loginBtns"><a href="/github/onlyAuthoisedUser">Profile</a></span>
+            <span class="loginBtns"><a href="/about">About</a></span>
+            <span class="loginBtns"><a href="/blog">Blog</a></span>
+          </nav>
+          <nav>
             <span><a href="https://github.com/esfiddle/esfiddle" target="_blank"><img src="/images/GitHub.png" class="github-logo"></a></span>
             <span class="horizontal layoutBtns">H</span>
             <span class="vertical layoutBtns">V</span>
             <span class="dark-mode"> </span>
+          </nav>
         </div>
         <div class="content">
             <div class="selector-wrapper">
@@ -79,30 +85,32 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
                 </select>
             </div>
             <div class="code-wrapper">
-              <div class="fiddle-wrapper">
-                <div class="fiddle-header">
+              <div class="fiddle-wrapper wrapper">
+                <div class="fiddle-header wrapper-header">
                     <span>Code</span>
-                    <div class="share">
-                        <div class="share-drop">
-                            <label for="share-link">Link</label>
-                            <input value="" id="share-link">
-                            <label for="shared-embed">Embed</label>
-                            <input value="" id="share-embed">
-                            <a class="tweet" href="#" target="_blank">Tweet</a>
-                        </div>
-                    </div>
-                    <div title="save" class="save"></div>
-                    <div title="lint" class="lint"></div>
-                    <div title="run" class="run"></div>
+                    <nav>
+                      <div class="share">
+                          <div class="share-drop">
+                              <label for="share-link">Link</label>
+                              <input value="" id="share-link">
+                              <label for="shared-embed">Embed</label>
+                              <input value="" id="share-embed">
+                              <a class="tweet" href="#" target="_blank">Tweet</a>
+                          </div>
+                      </div>
+                      <div title="save" class="save"></div>
+                      <div title="lint" class="lint"></div>
+                      <div title="run" class="run"></div>
+                    </nav>
                 </div>
-                <div class="fiddle"></div>
+                <div class="fiddle wrapper-content"></div>
                 <div class="resizer"></div>
             </div>
-              <div class="result-wrapper">
-                <div class="result-header"><span>Console</span></div>
-                <iframe class="result"></iframe>
+              <div class="result-wrapper wrapper">
+                <div class="result-header wrapper-header"><span>Console</span></div>
+                <iframe class="result wrapper-content"></iframe>
             </div>
-            </div>
+          </div>
         </div>
         <script defer src="/src/analytics.js"></script>
         <script async src="/src/es6-fiddle.js"></script>

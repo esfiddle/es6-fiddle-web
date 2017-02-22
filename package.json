@@ -31,7 +31,8 @@
     "mongodb": "^2.2.5",
     "mongoose": "^4.7.7",
     "passport": "^0.3.2",
-    "passport-github2": "^0.1.10"
+    "passport-github2": "^0.1.10",
+    "poet": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -43,13 +44,14 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-express-server": "0.5.3",
     "grunt-inline": "0.3.6",
     "grunt-jscs": "^3.0.1",
+    "grunt-lesslint": "^3.2.0",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.2.0",
     "supertest": "^2.0.1",

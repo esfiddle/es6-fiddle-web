@@ -1,0 +1,44 @@
+.header {
+    width: 100%;
+    background: @wine;
+    font-family: @font-family;
+    color: @white;
+    font-size: 12px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      span:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      a {
+          text-decoration: none;
+          color: @white;
+
+          &:hover {
+              text-decoration: underline;
+          }
+      }
+    }
+}
+
+.about {
+    color: @wine;
+    font-size: 0;
+}
+
+.theme-wrapper {
+    float: right;
+}
+
+.dark {
+    .dark-mode {
+        background-image: url('/images/sun.png');
+    }
+}

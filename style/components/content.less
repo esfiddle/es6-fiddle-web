@@ -1,0 +1,104 @@
+.content {
+    .clearfix;
+    position: relative;
+    width: 100%;
+    min-width: 600px;
+    height: ~"calc(100% - 22px)";
+    margin-top: 4px;
+    font-size: 0;
+    margin: 0 auto;
+
+    .code-wrapper {
+      display: flex;
+      flex-direction: row;
+      height: ~"calc(100% - 57px)";
+
+      &:not(.column) .result-wrapper {
+        flex: 1;
+      }
+
+      &.column {
+        flex-direction: column;
+
+        .resizer {
+          bottom: -50px;
+          right: 0;
+          width: 100%;
+          height: 100px;
+          cursor: row-resize;
+        }
+      }
+    }
+
+
+    .wrapper {
+      font-size: 14px;
+      border: 1px solid @gray;
+      position: relative;
+
+      .wrapper-header {
+        height: 58px;
+        width: 100%;
+        background: #e9d9d3; // NAO VAI DAR MAN
+        color: @wine;
+        font-size: 18px;
+        font-family: @font-family;
+        transition: background-color, color 0.5s;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+
+        span {
+            margin-left: 20px;
+            text-transform: uppercase;
+        }
+      }
+
+      .wrapper-content {
+        width: 100%;
+        height: ~"calc(100% - 58px)";
+      }
+
+      &.fiddle-wrapper {
+        flex-basis: 50%;
+
+        .resizer {
+          width: 100px;
+          height: 100%;
+          position: absolute;
+          right: -80px;
+          bottom: 0;
+          cursor: col-resize;
+          z-index: 2;
+        }
+
+          .fiddle-header {
+              justify-content: space-between;
+
+              nav {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+              }
+          }
+
+          .fiddle {
+              .line-error {
+                  background-color: @red;
+                  opacity: 0.1;
+              }
+          }
+      }
+
+      &.result-wrapper {
+        flex-grow: 1;
+
+          .result {
+              border: none;
+              transition: background-color 0.5s;
+              position: absolute;
+          }
+      }
+    }
+}

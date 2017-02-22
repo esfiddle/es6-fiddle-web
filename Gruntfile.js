@@ -4,11 +4,11 @@ module.exports = function(grunt) {
             'static/lib/jshint/**/*.js',
             'static/lib/codemirror/**/*.js',
             'src/es6-fiddle.js',
-            'src/*-example.js',
+            'src/examples/*.js',
             'src/add-examples.js'
         ],
-        styleFiles = ['static/lib/**/*.css', 'style/*.styl'],
-        lintFiles = ['app.js', 'api.js', 'src/*.js'],
+        styleFiles = ['static/lib/**/*.css', 'style/**/*.less'],
+        lintFiles = ['app.js', 'api.js', 'src/**/*.js'],
         pkg = grunt.file.readJSON('package.json'),
         npmTasks = [
             'grunt-contrib-jshint',
@@ -45,13 +45,10 @@ module.exports = function(grunt) {
                 }
             }
         },
-        stylus: {
-            compile: {
+        less: {
+            production: {
                 files: {
-                    'static/style/es6-fiddle.css': styleFiles
-                },
-                options: {
-                    import: ['nib']
+                    'static/style/es6-fiddle.css': ['static/lib/**/*.css', 'style/main.less']
                 }
             }
         },
@@ -61,11 +58,11 @@ module.exports = function(grunt) {
             },
             style: {
                 files: styleFiles,
-                tasks: ['stylus', 'inline']
+                tasks: ['less', 'inline']
             },
             src: {
                 files: jsFiles,
-                tasks: ['uglify']
+                tasks: ['uglify', 'eslint']
             },
             html: {
                 files: 'src/index.html',
@@ -92,9 +89,20 @@ module.exports = function(grunt) {
         },
         eslint: {
             options: {
-                config: '.eslintrc',
+                config: '.eslintrc'
             },
             target: ['src/**/*.js', 'Gruntfile.js']
+        },
+        lesslint: {
+            options: {
+                imports: ['style/**/*.less'],
+                csslint: {
+                    'box-sizing': false,
+                    'adjoining-classes': false,
+                    'universal-selector': false
+                }
+            },
+            target: ['style/main.less']
         },
         browserSync: {
             bsFiles: {
@@ -121,6 +129,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('test', ['jshint', 'jscs', 'eslint']);
-    grunt.registerTask('build', ['stylus', 'uglify','imagemin', 'inline']);
+    grunt.registerTask('build', ['less', 'uglify','imagemin', 'inline']);
     grunt.registerTask('dev', ['express:dev', 'browserSync', 'watch']);
 };

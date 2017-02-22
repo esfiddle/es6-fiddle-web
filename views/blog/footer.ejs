@@ -1,0 +1,25 @@
+          </div>
+
+
+            <div class="footer">
+              <ul class="nav nav-list">
+                <li class="nav-header">categories:</li>
+                <% getCategories().forEach(function(cat) { %>
+                  <li><a href="/categories/<%= cat %>"><%= cat %></a></li>
+                <% }) %>
+              </ul>
+
+              <ul>
+                <li class="nav-header">tags:</li>
+                <% getTags().forEach(function(tag) { %>
+                  <li><a href="/tags/<%= tag %>"><%= tag %></a></li>
+                <% }) %>
+              </ul>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
