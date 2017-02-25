@@ -56,13 +56,15 @@
     "istanbul": "0.4.5",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.2.0",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "trevor": "^2.2.0"
   },
   "scripts": {
     "test": "grunt test && npm run test-node",
     "test-node": "mocha test/*.test.js",
     "prestart": "",
     "start": "grunt dev",
-    "build": "grunt build"
+    "build": "grunt build",
+    "trevor": "trevor"
   }
 }
