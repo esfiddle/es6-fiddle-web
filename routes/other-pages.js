@@ -5,7 +5,7 @@ router.get('/about', (req, res) => {
     res.sendFile(`${__dirname  }/static/about.html`);
 });
 
-app.get('/blog', (req, res) => {
+router.get('/blog', (req, res) => {
     res.render('blog/index');
 });
 
