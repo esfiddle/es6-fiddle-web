@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var Fiddles = require('./db/fiddles');
+var Fiddles = require('../db/fiddles');
 
 router.get('/authenticated', (req, res) => {
     res.send({'logged': req.isAuthenticated()});
