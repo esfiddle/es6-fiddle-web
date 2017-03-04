@@ -23,7 +23,10 @@ const express = require('express'),
             '/categories/:category': 'blog/category',
             '/blog/:page': 'blog/page'
         }
-    });
+    }),
+    main = require('./routes/main-page-route'),
+    about = require('./routes/other-pages'),
+    auth = require('./routes/authorised-routes');
 
 app.use(compression());
 app.use(bodyParser.json());
@@ -59,26 +62,28 @@ function ensureAuthenticated(req, res, next) {
 
 app.use('/', express.static(`${__dirname  }/static`));
 
+app.use('/', main);
+app.use('/',about);
+app.use('/',auth);
 // This one is matching '/xyz/' NOT -> '/xyz/sdf'
-app.get(/^\/\w+\/$/, (req, res) => {
-    res.sendFile(`${__dirname  }/static/index.html`);
-});
-app.get('/about', (req, res) => {
-    res.sendFile(`${__dirname  }/static/about.html`);
-});
-app.get(/^\/embed\/\w+\/$/, (req, res) => {
-    res.sendFile(`${__dirname  }/static/embed.html`);
-});
+// app.get(/^\/\w+\/$/, (req, res) => {
+//     res.sendFile(`${__dirname  }/static/index.html`);
+// });
+// app.get('/about', (req, res) => {
+//     res.sendFile(`${__dirname  }/static/about.html`);
+// });
+// app.get(/^\/embed\/\w+\/$/, (req, res) => {
+//     res.sendFile(`${__dirname  }/static/embed.html`);
+// });
 
 //poet routes
-app.get('/blog', (req, res) => {
-    res.render('blog/index');
-});
+// app.get('/blog', (req, res) => {
+//     res.render('blog/index');
+// });
 
-app.get('/authenticated', (req, res) => {
-    res.send({'logged': req.isAuthenticated()});
-})
-
+// app.get('/authenticated', (req, res) => {
+//     res.send({'logged': req.isAuthenticated()});
+// })
 // This one is matching '/xyz' NOT -> '/xyz/'
 app.get(/^\/\w+$/, (req, res) => {
     res.redirect(`${req.url  }/`);
@@ -88,46 +93,46 @@ app.get(/^\/embed\/\w+$/, (req, res) => {
     res.redirect(`${req.url  }/`);
 });
 
-app.get('/github/login', (req, res) => {
-    res.render('login');
-});
+// app.get('/github/login', (req, res) => {
+//     res.render('login');
+// });
 
 //TESTING URL FOR GITHUB
-app.get('/auth/github',
-  passport.authenticate('github', { scope: [ 'user:email' ] }), (req, res) => {
-      // The request will be redirected to GitHub for authentication, so this
-     // function will not be called.
-      console.log('just to get rid of lint error !',res);
-  });
+// app.get('/auth/github',
+//   passport.authenticate('github', { scope: [ 'user:email' ] }), (req, res) => {
+//       // The request will be redirected to GitHub for authentication, so this
+//      // function will not be called.
+//       console.log('just to get rid of lint error !',res);
+//   });
 
-app.get('/auth/github/callback',
-  passport.authenticate('github', {
-      failureRedirect: '/github/login',
-      failureFlash: true,
-      successFlash: 'Welcome!'
-  }),
-  (req, res) => {
-    // Successful authentication, redirect home.
-      res.redirect('/github/myProfile');
-  });
+// app.get('/auth/github/callback',
+//   passport.authenticate('github', {
+//       failureRedirect: '/github/login',
+//       failureFlash: true,
+//       successFlash: 'Welcome!'
+//   }),
+//   (req, res) => {
+//     // Successful authentication, redirect home.
+//       res.redirect('/github/myProfile');
+//   });
 
-app.get('/github/myProfile', ensureAuthenticated, (req, res) => {
-    Fiddles.find({userId:req.user._id}).then ( fiddles => {
-        res.render('authenticated', {
-            user: req.user, fiddles:fiddles,
-            startedFiddles:req.user.startedFiddles,
-            message: req.flash() });
-    })
-    .catch( e => res.status(400).send(e));
+// app.get('/github/myProfile', ensureAuthenticated, (req, res) => {
+//     Fiddles.find({userId:req.user._id}).then ( fiddles => {
+//         res.render('authenticated', {
+//             user: req.user, fiddles:fiddles,
+//             startedFiddles:req.user.startedFiddles,
+//             message: req.flash() });
+//     })
+//     .catch( e => res.status(400).send(e));
 
-});
+// });
 app.get('/about', (req, res) => {
     res.render('about');
 });
-app.get('/github/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
+// app.get('/github/logout', (req, res) => {
+//     req.logout();
+//     res.redirect('/');
+// });
 
 api(app);
 
