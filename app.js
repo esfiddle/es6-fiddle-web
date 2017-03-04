@@ -84,7 +84,6 @@ app.use('/',auth);
 // app.get('/authenticated', (req, res) => {
 //     res.send({'logged': req.isAuthenticated()});
 // })
-
 // This one is matching '/xyz' NOT -> '/xyz/'
 app.get(/^\/\w+$/, (req, res) => {
     res.redirect(`${req.url  }/`);
