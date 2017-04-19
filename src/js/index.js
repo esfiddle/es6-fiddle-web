@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import codemirror from 'codemirror';
+import 'codemirror/mode/javascript/javascript';
 import analytics from './analytics';
 import redirectTraffic from './redirect-traffic';
 import layoutFunctions from './layoutFunctions';
@@ -9,6 +10,7 @@ import logger from './logger';
 import examples from './add-examples';
 import $ from './helpers';
 import share from './share';
+import snackbar from './snackbar';
 
 const codeWrapper = $.getElement('.code-wrapper'),
   fiddleWrapper = $.getElement('.fiddle-wrapper'),
@@ -152,6 +154,12 @@ babel.onload = () => {
       } else {
         fiddle.setValue('* Sorry, but I could not load your code right now. *');
       }
+      if (data.isPrivate) {
+        const privateIcon = $.getElement('.fa-globe');
+        privateIcon.classList.remove('fa-globe');
+        privateIcon.classList.add('fa-lock');
+        privateIcon.parentElement.setAttribute('data-balloon', 'Private Fiddle');
+      }
     } else {
       $.addStyleTo(startFiddle, 'display', 'none');
       fiddle.setValue(data.message);
@@ -226,6 +234,25 @@ babel.onload = () => {
         })
         .then(resp => resp.json())
         .then(data => clickEvents.starFiddle(data));
+      }
+    };
+
+    // Make fiddle private
+    $.getElement('.private').onclick = () => {
+      const pathArr = window.location.pathname.split('/'),
+        fiddleID = pathArr[1].length > 1 ? pathArr[1] : -1;
+      if (fiddleID !== -1) {
+        fetch(`/private/${fiddleID}`, {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+        })
+        .then(resp => resp.json())
+        .then(data => clickEvents.privateFiddle(data));
+      } else {
+        snackbar.showSnackbar('You don\'t appear to have any code or its not saved.');
       }
     };
 

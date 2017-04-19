@@ -16,15 +16,7 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
   </head>
   <body>
     <div class="header">
-      <nav>
-        <div class="logo"><a href="/"><img src="/images/logo.png"/></a></div>
-        <span class="loginBtns"><a href="/">Home</a></span>
-        <span class="loginBtns only-loggedout"><a href="/auth/github">Login</a></span>
-        <span class="loginBtns only-logged"><a href="/github/logout">Logout</a></span>
-        <span class="loginBtns only-logged-profile"><a href="#">Profile</a></span>
-        <span class="loginBtns"><a href="/about">About</a></span>
-        <span class="loginBtns"><a href="/blog">Blog</a></span>
-      </nav>
+      <% include components/navbar.ejs %>
       <nav>
         <span><a href="https://github.com/esfiddle/esfiddle" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></span>
       </nav>
@@ -61,5 +53,5 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
     </div><!-- @end #content -->
   </div><!-- @end #w -->
 </body>
-<script async src="src/authenticated.js"></script>
+<script async src="../src/authenticated.js"></script>
 </html>

@@ -30,7 +30,19 @@ const clickEvents = {
     if (!data.message) {
       starIcon.classList.remove('fa-star-o');
       starIcon.classList.add('fa-star');
-      snackbar.showSnackbar('Your fiddle has been favourited');
+      snackbar.showSnackbar('Your fiddle has been favorited');
+    } else {
+      snackbar.showSnackbar(data.message);
+    }
+  },
+
+  privateFiddle(data) {
+    const privateIcon = $.getElement('.fa-globe');
+    if (!data.message) {
+      privateIcon.classList.remove('fa-globe');
+      privateIcon.classList.add('fa-lock');
+      privateIcon.parentElement.setAttribute('data-balloon', 'Private Fiddle');
+      snackbar.showSnackbar('This fiddle is now private!');
     } else {
       snackbar.showSnackbar(data.message);
     }
@@ -58,7 +70,7 @@ const clickEvents = {
         }
       });
     } else {
-      snackbar.showSnackbar('You don\'t apperar to have any code');
+      snackbar.showSnackbar('You don\'t appear to have any code');
     }
   },
 

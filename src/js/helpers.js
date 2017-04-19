@@ -16,7 +16,7 @@ const $ = {
   },
 
   removeClass(el, classToRemove) {
-    return el.classList.add(classToRemove);
+    return el.classList.remove(classToRemove);
   },
 
   addStyleTo(el, prop, value) {

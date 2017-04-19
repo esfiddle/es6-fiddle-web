@@ -17,6 +17,10 @@ var fiddlesSchema = new Schema({
     starCounter:{
         type:Number,
         default: 0
+    },
+    isPrivate:{
+        type:Boolean,
+        default: false
     }
 
 

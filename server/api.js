@@ -14,6 +14,21 @@ module.exports = function (app) {
     if (fiddle) {
       Fiddles.findOne({ fiddle }, (err, item) => {
         if (item) {
+          //Check if this fiddle is private......
+          if(item.isPrivate){
+            if(!req.isAuthenticated()){
+              return res.status(401).json({
+                message: `This is a private fiddle please login.`,
+              });
+            }
+            if(item.userId.toHexString() === req.user._id){
+              return res.json(item);
+            }else{
+              return res.status(400).json({
+                message: `This is a private fiddle!.`,
+              });
+            }
+          }
           res.json(item);
         } else {
           res.status(404).json({
@@ -114,4 +129,33 @@ module.exports = function (app) {
       res.status(400).json({ message: e });
     });
   });
+
+  app.post('/private/:fiddleID', (req, res) => {
+      const fiddleID = req.params.fiddleID;
+
+      // Only authorized user allowed to star a fiddle
+      if (!req.isAuthenticated()) {
+        return res.status(401).json({ message: 'Only logged in user allowed to have private fiddle !' });
+      }
+
+
+      Fiddles.findOne({fiddle:fiddleID}).then(fiddle => {
+            if(!fiddle){
+              throw (`fiddle: ${fiddleID} Not Found !`);
+            }
+            if(!fiddle.userId){
+                //This fiddle is saved by anonymous user...
+              throw (`You can only make your own fiddle private please click on save first!`);
+            }else if(fiddle.userId.toHexString() !== req.user._id ){
+                throw (`You can only make your own fiddle private !`);
+            }else{
+              return Fiddles.findOneAndUpdate({ fiddle: fiddleID }, {isPrivate:true}, { new: true });
+            }
+         }).then( fiddle => res.json({fiddle}))
+         .catch( e => {
+            //console.log(e);
+            res.status(400).json({ message: e })});
+
+  });
+
 };

@@ -32,7 +32,7 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
     <body>
         <div class="header">
           <nav>
-            <div class="logo"><a href="/"><img src="images/esfiddle.png"/></a></div>
+            <div class="logo"><a href="/"><img src="/images/esfiddle.png"/></a></div>
             <span class="loginBtns only-logged-profile"><a href="/github/myProfile">Profile</a></span>
             <span class="loginBtns"><a href="/about">About</a></span>
             <span class="loginBtns"><a href="/blog">Blog</a></span>
@@ -144,6 +144,10 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
                       <div title="star" class="star" data-balloon="Star Fiddle" data-balloon-pos="up">
                         <i class="fa fa-star-o" aria-hidden="true"></i>
                       </div>
+                      <div title="private" class="private" data-balloon="Public Fiddle" data-balloon-pos="up">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        <!--<i class="fa fa-lock" aria-hidden="true"></i>-->
+                      </div>
                       <div title="lint" class="lint" data-balloon="Lint Fiddle" data-balloon-pos="up">
                         <i class="fa fa-check" aria-hidden="true"></i>
                       </div>
@@ -168,7 +172,7 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
         </div>
         <div class="snackbar"></div>
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.9.4/jshint.min.js"></script>
-        <script async src="src/es6-fiddle.js"></script>
-        <script async src="src/authenticated.js"></script>
+        <script async src="/src/es6-fiddle.js"></script>
+        <script async src="/src/authenticated.js"></script>
     </body>
 </html>
