@@ -38,4 +38,10 @@ console.log(l10nUSD.format(number)); // Number formatted with $ symbol
 console.log(l10nJPY.format(number)); // Japan drops sub unit
 `;
 
+window.es6Example.internationalization.onStart =
+`
+console.log('Internationalization and Localization');
+console.log('Internationalization API is provided in ES6 by using the Intl object. It provides language sensitive string comparison, number formatting, and date and time formatting.');
+`;
+
 window.es6Example.internationalization.display = 'Internationalization and Localization';

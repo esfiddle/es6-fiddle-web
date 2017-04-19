@@ -35,4 +35,10 @@ for (let value of x.entries()) {
   console.log(value);
 }`;
 
+window.es6Example.set.onStart =
+`
+console.log('Set');
+console.log('The Set objects is a simple implementation of a set in mathematic terms.  It stores only unique values whether they are primitives or objects. Some of the provided methods are add, clear, delete, entries, keys, values and more.');
+`;
+
 window.es6Example.set.display = 'Set';

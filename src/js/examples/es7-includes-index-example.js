@@ -20,4 +20,10 @@ console.log(array.includes(undefined, 4));
 //able to detect NaN array elements
 console.log(array.includes(NaN));`;
 
+window.es7Example.arrayIndex.onStart =
+`
+console.log('Array Includes: Search from Index');
+console.log('Array has an includes method can also search at a particular index for the element.');
+`;
+
 window.es7Example.arrayIndex.display = 'Array Includes: Search from Index';

@@ -14,8 +14,8 @@ console.log(pi());`;
 
 window.es6Example.arrow.onStart =
 `
-console.log('Example: Arrow Functions');
-console.log('Description: This example code is designed to show how to use arrow functions in es6.  There are a few different syntax that can be used.');
+console.log('Arrow Functions');
+console.log('Arrow Functions is a new syntax for defining functions. There are a few key difference when using arrow functions.  Such as the binding of 'this', implicit returns, etc.');
 `;
 
 window.es6Example.arrow.display = 'Arrow Functions';

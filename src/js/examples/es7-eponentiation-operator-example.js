@@ -11,4 +11,10 @@ num **= 2;
 console.log(num);
 `;
 
-window.es7Example.exponentiation.display = 'Exponentiation Operator ';
+window.es7Example.exponentiation.onStart =
+`
+console.log('Exponentiation Operator');
+console.log('Exponentiation Operator is similar to Math.pow() such that the base is on the left side and exponent on the right side.');
+`;
+
+window.es7Example.exponentiation.display = 'Exponentiation Operator';
