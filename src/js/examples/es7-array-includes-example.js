@@ -1,5 +1,5 @@
 /* global window */
-window.es7Example = window.es7Example || {}
+window.es7Example = window.es7Example || {};
 window.es7Example.arrayIncludes = {};
 
 window.es7Example.arrayIncludes.code =
