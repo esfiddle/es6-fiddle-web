@@ -21,4 +21,10 @@ if (secretMessage.includes('jeffrey')) {
   console.log('Message is for Jeffrey');
 }`;
 
+window.es6Example.stringMethods.onStart =
+`
+console.log('String Methods');
+console.log('Examples of new String methods such as startsWith, endsWith and includes');
+`;
+
 window.es6Example.stringMethods.display = 'String Methods';

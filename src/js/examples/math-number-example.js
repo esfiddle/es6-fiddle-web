@@ -25,4 +25,10 @@ console.log("Base 10 logarithm of 1000 = ", Math.log10(1000));
 console.log("Hypotenuse of 6 and 8 = ", Math.hypot(6, 8));
 `;
 
+window.es6Example.mathNumber.onStart =
+`
+console.log('Math and Number features');
+console.log('Examples of new Math and Number methods such as isInteger, isNaN, sign, and trunc.')
+`;
+
 window.es6Example.mathNumber.display = 'Math and Number features';

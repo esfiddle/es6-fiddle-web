@@ -15,7 +15,7 @@ console.log(pi());`;
 window.es6Example.arrow.onStart =
 `
 console.log('Arrow Functions');
-console.log('Arrow Functions is a new syntax for defining functions. There are a few key difference when using arrow functions.  Such as the binding of 'this', implicit returns, etc.');
+console.log('Arrow Functions is a new syntax for defining functions. There are a few key difference when using arrow functions.  Such as the binding of keyword this, implicit returns, etc.');
 `;
 
 window.es6Example.arrow.display = 'Arrow Functions';

@@ -36,4 +36,10 @@ greetingArray.fill(7);
 console.log(copiedArray);
 console.log(greetingArray);`;
 
+window.es6Example.arrayMethods.onStart =
+`
+console.log('Array Methods');
+console.log('Examples of new array methods in ES6 such as from, of, next and find.');
+`;
+
 window.es6Example.arrayMethods.display = 'Array Methods';
