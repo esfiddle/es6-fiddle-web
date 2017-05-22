@@ -9,9 +9,11 @@
 - [ ] New feature (non-breaking change which adds new functionality)
 - [ ] Breaking change (fix or feature that would change existing functionality)
 
-#### Checklist:
-- [ ] Tested changes locally.
-- [ ] New tests added?
-- [ ] Closes currently open issue (replace XXXX with an issue no): Closes #XXXX
+#126 Checklist:
+- [ 1 ] Tested changes locally.-Yes
+- [ 2 ] New tests added?- yes
+- [ 3 ] Closes currently open issue (replace XXXX with an issue no): Closes #126
 
-#### Full Description of your Changes
+#126 Full Description of your Changes
+
+Made the fonts in Navigator consistent in all the screens, and increased the size.
