@@ -33,7 +33,6 @@ html {
   padding: 0;
   transition: 0.5s background-color ease;
   height: 100%;
-  font-family: 'Raleway', sans-serif;
   background: #fdfdfd;
   font-size: 16px;
   line-height: 24px;
@@ -252,7 +251,7 @@ a:hover {
   width: 100%;
   background: #A8D5BE;
   color: #353535;
-  font-size: 12px;
+  font-size: 17px;
   display: flex;
   padding: 10px;
   box-sizing: border-box;
