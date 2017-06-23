@@ -52,6 +52,7 @@
             'dist/style/es6-fiddle.css': ['dist/lib/**/*.css', 'style/main.less'],
             'dist/style/profile.css': ['style/profile.less'],
             'dist/style/blog.css': ['style/blog.less'],
+            'dist/style/about.css': ['style/about.less'],
           },
         },
       },

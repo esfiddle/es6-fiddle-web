@@ -1,0 +1,36 @@
+{
+  "name": "esfiddle",
+  "scripts": {
+  },
+  "env": {
+    "GITHUB_CLIENT_ID": {
+      "required": true
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "required": true
+    },
+    "MONGODB_URI": {
+      "required": true
+    },
+    "OPBEAT_APP_ID": {
+      "required": true
+    },
+    "OPBEAT_ORGANIZATION_ID": {
+      "required": true
+    },
+    "OPBEAT_SECRET_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "mongolab",
+    "opbeat"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
