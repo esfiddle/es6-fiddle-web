@@ -20,7 +20,7 @@ With this taken care of, you need to run `npm install` from within the directory
 
 ## So, I ran `npm start` but I see something other then ESFiddle in the browser
 
-Make sure you're not running any other servers at the same port. For example, Express uses port 3000 (http://localhost:3000) by default, and if you've got an Express application running in the background with default settings, you will see this other website instead of ESfiddle. Terminate this other app, and try again, should work now! 
+Make sure you're not running any other servers at the same port. For example, Express uses port 3000 (http://localhost:3000) by default, and if you've got an Express application running in the background with default settings, you will see this other website instead of ESFiddle. Terminate this other app, and try again, should work now! 
 
 ## I've got some `MongoError` messages and ESFiddle doesn't load
 
@@ -30,7 +30,7 @@ Now, this is probably just a little thing: a failed connection to the database. 
 
 Using MongoDB locally is not a requirement. If you have experience with hosted databases such as MLab, for example, by all means feel free to use your `mongodb://` URL as your path to the database. For your convenience, there's a sample.env file with this variable ready for your custom URL. NB: Don't forget to rename `sample.env` file to just `.env`
 
- - ### My Mongo url is 'undefined:27017' and fails to start the server
+## My Mongo url is 'undefined:27017' and fails to start the server
 ![errorImage](https://user-images.githubusercontent.com/16874651/27354460-134cf2a2-5621-11e7-8b97-c9e5f826656e.png)
 
 This can be fixed by ensuring that your `.env` is configured correctly. Please take a look at the `sample.env`, make a copy, change any details and rename it to `.env`. Making sure there is a file called `.env` or the server will not be able to find your enviroment variables.

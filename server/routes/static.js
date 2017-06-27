@@ -8,4 +8,8 @@ module.exports = app => {
     app.get('/about', (req, res) => {
         res.sendFile(`${path.resolve("./")}/dist/about.html`);
     });
+    
+    app.get('/faq', (req, res) => {
+        res.sendFile(`${path.resolve("./")}/dist/faq.html`);
+    });
 }

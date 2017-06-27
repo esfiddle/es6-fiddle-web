@@ -5,7 +5,7 @@
         'src/js/**/*.js',
         '!src/js/authenticated.js'
       ],
-      htmlFiles = ['src/views/index.html', 'src/views/about.html']
+      htmlFiles = ['src/views/index.html', 'src/views/about.html', 'src/views/faq.html']
       jsFiles = 'src/**/*.js',
       styleFiles = ['dist/lib/**/*.css', 'style/**/*.less'],
       pkg = grunt.file.readJSON('package.json'),
@@ -89,6 +89,10 @@
         about: {
           src: 'src/views/about.html',
           dest: 'dist/about.html',
+        },
+        faq: {
+          src: 'src/views/faq.html',
+          dest: 'dist/faq.html',
         },
       },
       eslint: {
