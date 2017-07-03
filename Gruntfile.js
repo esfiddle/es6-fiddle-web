@@ -52,6 +52,7 @@
             'dist/style/es6-fiddle.css': ['dist/lib/**/*.css', 'style/main.less'],
             'dist/style/profile.css': ['style/profile.less'],
             'dist/style/blog.css': ['style/blog.less'],
+            'dist/style/about.css': ['style/about.less'],
           },
         },
       },
@@ -134,5 +135,5 @@
     grunt.registerTask('default', ['githooks', 'watch']);
     grunt.registerTask('test', ['lesslint', 'eslint']);
     grunt.registerTask('build', ['less', 'browserify', 'uglify', 'imagemin', 'inline']);
-    grunt.registerTask('dev', ['express:dev', 'browserSync', 'watch']);
+    grunt.registerTask('dev', ['less', 'express:dev', 'browserSync', 'watch']);
   };

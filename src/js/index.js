@@ -116,6 +116,25 @@ if (savedTheme) {
 // add the logger script to the iframe
 logger.start();
 
+// Add line number to all console.log() statements
+function calculateLineNumber(fiddleValue) {
+  const lines = fiddleValue.split(/\n/);
+  let newLines = '';
+  newLines = lines.map((line, index) => {
+    const consReg = /(console\.log\()(.*)/;
+    //  separate console.log from original string and split it in to
+    // "console.log(" and ")"
+    const clgLines = line.match(consReg);
+    if (clgLines) {
+      // Add line no: to console.log and join it with rest of the original line.
+      // return line.slice(0, clgLines.index) + clgLines[1] + `'${index+1}: ' + ` +clgLines[2];
+      return `${line.slice(0, clgLines.index) + clgLines[1]}'${index + 1}: ' + ${clgLines[2]}`;
+    }
+    return line;
+  });
+  return newLines.join('\n');
+}
+
 //  wait for babel to load
 babel.onload = () => {
   const runFiddle = () => {
@@ -135,7 +154,9 @@ babel.onload = () => {
     $.addClass(userInput, 'babel-text');
 
     // set the new script code
-    userInput.innerHTML = `try {${fiddle.getValue()}} catch(e) { console.log(e.message); }`;
+    // Warp in try and catch to display error on console panel..
+    // calculateLineNumber is called to Add line numbers to console.log for console panel.
+    userInput.innerHTML = `try {${calculateLineNumber(fiddle.getValue())}} catch(e) { console.log(e.message); }`;
     bootstrap.innerHTML = (
                     'document.body.innerHTML = \'\';\n' +
                     'babel.run(document.querySelector(".babel-text").innerHTML);\n'
@@ -280,6 +301,7 @@ babel.onload = () => {
     };
   }
 };
+
 
 // Add dragging funcionality
 

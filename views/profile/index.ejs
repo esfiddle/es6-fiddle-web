@@ -16,41 +16,18 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
   </head>
   <body>
     <div class="header">
-      <% include components/navbar.ejs %>
+      <% include ../components/navbar.ejs %>
       <nav>
         <span><a href="https://github.com/esfiddle/esfiddle" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></span>
       </nav>
     </div>
 
   <div class="profile">
-    <div class="content" class="clearfix">
-      <div class="userphoto"><img src= "<%= user.avatar_url %>" alt="default avatar"></div>
-      <div class="user-details">
-        <h1><%= user.name %></h1>
-        <section class="bio">
-          @<%= user.login %>
-        </section>
-
-        <section class="activity recent">
-          <h3>Most recent fiddles:</h3>
-          <ul>
-            <% for(var i=0; i<fiddles.length; i++) { %>
-                    <li><a href='/<%= fiddles[i].fiddle %>'> <%= fiddles[i].fiddle %></a></li>
-            <% } %>
-          </ul>
-        </section>
-        <% if (startedFiddles.length > 0) { %>
-          <section class="activity">
-            <h3>Stared fiddles</h3>
-            <ul>
-              <% for(var i=0; i<startedFiddles.length; i++) { %>
-                      <li><a href='/<%= startedFiddles[i] %>'> <%= startedFiddles[i] %></a></li>
-              <% } %>
-            </ul>
-          </section>
-        <% } %>
-    </div>
-    </div><!-- @end #content -->
+    <% if (typeof user === 'undefined') { %>
+        <% include notFound.ejs %>
+    <% } else { %>
+        <% include profile.ejs %>
+    <% } %>
   </div><!-- @end #w -->
 </body>
 <script async src="../src/authenticated.js"></script>

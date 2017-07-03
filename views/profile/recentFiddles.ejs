@@ -1,0 +1,8 @@
+<section class="activity recent">
+  <h3>Most recent fiddles:</h3>
+  <ul>
+    <% for(var i=0; i<fiddles.length; i++) { %>
+            <li><a href='/<%= fiddles[i].fiddle %>'> <%= fiddles[i].fiddle %></a></li>
+    <% } %>
+  </ul>
+</section>

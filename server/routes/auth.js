@@ -34,10 +34,10 @@ module.exports = app => {
 
     app.get('/github/myProfile', ensureAuthenticated, (req, res) => {
         Fiddles.find({ userId: req.user._id }).then(fiddles => {
-            res.render('authenticated', {
+            res.render('profile', {
                 user: req.user, fiddles: fiddles,
                 startedFiddles: req.user.startedFiddles,
-                message: req.flash()
+                message: req.flash(),
             });
         })
             .catch(e => res.status(400).send(e));

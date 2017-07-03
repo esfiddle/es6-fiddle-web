@@ -149,30 +149,7 @@ body * {
 .header nav a:hover {
   color: #686868;
 }
-footer {
-  width: 100%;
-  background: #A8D5BE;
-  color: #353535;
-  font-size: 12px;
-  display: flex;
-  padding: 10px;
-  box-sizing: border-box;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #86c4a4;
-}
-footer a {
-  color: #353535;
-}
-footer .nav-header {
-  font-weight: bold;
-}
-footer ul {
-  margin: 0;
-  padding-left: 10px;
-  list-style: none;
-}
-.blog {
+.about {
   width: 70%;
   padding-top: 60px;
   margin: auto;
@@ -191,72 +168,4 @@ footer ul {
   -webkit-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-.blog h1 {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 36px;
-}
-.blog .date,
-.blog .categories {
-  font-size: 12px;
-  opacity: .6;
-  float: left;
-  margin-top: -15px;
-  margin-bottom: 20px;
-  padding-right: 5px;
-}
-.blog .thumbnail {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-}
-.blog .thumbnail img {
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  max-width: 100%;
-}
-.blog .poet-read-more {
-  margin-top: -10px;
-}
-.blog .poet-read-more,
-.blog .category {
-  text-transform: capitalize;
-}
-.blog .comments {
-  margin: 20px 0;
-}
-.blog .post-snippet:not(:first-child) {
-  margin-top: 40px;
-}
-.blog .post h1 {
-  font-size: 28px;
-  color: #4a9a71;
-}
-.blog .pagination {
-  padding: 30px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.blog .pagination ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.blog .pagination ul li {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 2px;
-}
-.blog .pagination ul li.active {
-  background-color: #3ca0c8;
-}
-.blog .pagination ul li.active a {
-  color: #fff;
-}
-.blog .pagination ul li a {
-  color: #353535;
 }
