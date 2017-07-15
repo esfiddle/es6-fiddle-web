@@ -1,11 +1,11 @@
 ## Guide to Contributing
 
-We welcome pull requests from first-timers and seasoned veteran programmers alike. 
+We welcome pull requests from first-timers and seasoned veteran programmers alike.
 **Follow these steps to contribute:**
 
 1. Star the Repo :star: Click the 'Star' button in the top right!
 
-2. Find an issue to work with the tag '[first-timers-only](https://github.com/esfiddle/esfiddle/labels/first-timers-only)' or '[up-for-grabs](https://github.com/esfiddle/esfiddle/labels/up-for-grabs)'. Or Raise a [new issue](https://github.com/esfiddle/esfiddle/issues/new) 
+2. Find an issue to work with the tag '[first-timers-only](https://github.com/esfiddle/esfiddle/labels/first-timers-only)' or '[up-for-grabs](https://github.com/esfiddle/esfiddle/labels/up-for-grabs)'. Or Raise a [new issue](https://github.com/esfiddle/esfiddle/issues/new)
 
 3. Let us know you are working on the issue by commenting on it. Make sure that you submit your pull request within a week of claiming it incase someone else wants to do it. [1]
 
@@ -22,14 +22,14 @@ If you're new to open source or this is your first Pull Request - you can learn 
 3. Create a new branch with a descriptive name of your change
 4. Run `npm install`
 5. Configure mongo in your environment:
-    1. Run the command `export MONGODB_URI='mongodb://localhost:27017/fiddles'` - the enviroment variables name should be 'MONGODB_URI'.
+    1. Run the command `export MONGODB_URI='mongodb://localhost:27017/fiddles'` - the environment variables name should be 'MONGODB_URI'.
 5. Start mongo in a new terminal instance by running `mongod`.
 6. Run `npm start` in the same terminal window from step 5. This means the server will start correctly.
 6. Make your changes
 7. Run `npm test`
 8. If the tests pass then commit
 9. Submit a PR against the Develop Branch and ensure that TravisCI tests pass
-10. Once a pull request has been approved it will be merged into the Devlop Branch.
+10. Once a pull request has been approved it will be merged into the Develop Branch.
 11. Only then once it has gone through a final screening will it be pulled through to the Master branch.
 
 

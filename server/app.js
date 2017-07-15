@@ -37,7 +37,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-    if (req.url.match(/^\/(images|lib\/babel)\/.+/)) {
+    if (req.url.match(/^\/(images|lib\/babel)\/.+/)
+        || req.url.match(/^\/(src\/es6-fiddle|src\/authenticated).+/)
+        || req.url.match(/^\/(authenticated)/)
+    ) {
         res.setHeader('Cache-Control', 'public, max-age=2628000');
     }
     next();

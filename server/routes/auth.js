@@ -37,8 +37,7 @@ module.exports = app => {
             res.render('profile', {
                 user: req.user, fiddles: fiddles,
                 startedFiddles: req.user.startedFiddles,
-                message: req.flash(), publicProfile: false,
-                authenticatedProfile: true,
+                message: req.flash(),
             });
         })
             .catch(e => res.status(400).send(e));

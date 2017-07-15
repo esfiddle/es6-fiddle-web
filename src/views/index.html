@@ -8,8 +8,6 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>ESFiddle</title>
-        <script src="https://use.fontawesome.com/52284be701.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.2.4/balloon.min.css">
         <link rel="stylesheet" href="../../dist/style/es6-fiddle.css?__inline=true">
         <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
@@ -174,5 +172,22 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.9.4/jshint.min.js"></script>
         <script async src="/src/es6-fiddle.js"></script>
         <script async src="/src/authenticated.js"></script>
+        <script async src="https://use.fontawesome.com/52284be701.js"></script>
+        <noscript id="deferred-styles">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.2.4/balloon.min.css"/>
+        </noscript>
+        <script>
+          var loadDeferredStyles = function() {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+          };
+          var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+              webkitRequestAnimationFrame || msRequestAnimationFrame;
+          if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+          else window.addEventListener('load', loadDeferredStyles);
+        </script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 ESFiddle contributors
 ===
 ESFiddle couldn't be done without the help of these amazing people
- 
+
 * [Josh Ghent](https://github.com/joshghent)
   * Project maintainer
 * [Jeff McRiffey](https://github.com/jmcriffey)
@@ -22,3 +22,5 @@ ESFiddle couldn't be done without the help of these amazing people
   * Added dark mode
 * [Ashok](https://github.com/asiyani)
   * Github signin, route refactoring and tests
+* [Jeff Kandel](https://github.com/JeffKandel/)
+  * Public profiles and browser caching

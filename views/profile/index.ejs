@@ -25,10 +25,8 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
   <div class="profile">
     <% if (typeof user === 'undefined') { %>
         <% include notFound.ejs %>
-    <% } else if (publicProfile) { %>
-        <% include public.ejs %>
-    <% } else if (authenticatedProfile) { %>
-        <% include authenticated.ejs %>
+    <% } else { %>
+        <% include profile.ejs %>
     <% } %>
   </div><!-- @end #w -->
 </body>
