@@ -25,6 +25,9 @@ cd esfiddle
 # Update PRIVATE section in sample.env file and rename it to '.env'
 mv sample.env .env
 
+# Install node_modules
+npm install
+
 # Open a new terminal window and start MongoDB
 mongod --dbpath path/to/your/db/folder
 
