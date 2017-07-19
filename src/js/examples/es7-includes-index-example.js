@@ -3,7 +3,7 @@ window.es7Example = window.es7Example || {};
 window.es7Example.arrayIndex = {};
 
 window.es7Example.arrayIndex.code =
-`let array = ["a", "b", "c", ,"e", NaN];
+`let array = ["a", "b", "c", undefined, "e", NaN];
 
 //array includes with fromIndex argument, no argument is equivalent to 0
 console.log(array.includes("a", 0));
