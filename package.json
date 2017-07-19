@@ -72,10 +72,13 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "grunt test && npm run test-node",
-    "test-node": "mocha test/*.test.js",
     "prestart": "",
     "start": "grunt dev",
     "build": "grunt build"
+  }
+  "engines": {
+    "node-version-1": "8.x",
+    "node-version-2": "7.x",
+    "node-version-3": "6.x"
   }
 }
