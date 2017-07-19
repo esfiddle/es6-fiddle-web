@@ -72,6 +72,8 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
+    "test": "grunt test && npm run test-node",
+    "test-node": "mocha test/*.test.js",
     "prestart": "",
     "start": "grunt dev",
     "build": "grunt build"
