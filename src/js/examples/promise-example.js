@@ -48,4 +48,10 @@ Promise.all([
 });
 `;
 
+window.es6Example.promise.onStart =
+`
+console.log('Promises');
+console.log('Promises are often used for asynchronous computations. This can be done by creating a new Promise object and calling the then() method. The method then() will execute once the function inside the Promise object is finished executing.');
+`;
+
 window.es6Example.promise.display = 'Promises';

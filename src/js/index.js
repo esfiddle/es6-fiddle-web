@@ -286,13 +286,16 @@ babel.onload = () => {
     window.exampleSelector.onchange = () => {
       if (window.exampleSelector.value) {
         let code = 'Example Can Not Be Found';
+        let onStart = 'On Start Not Provided';
 
         if (window.es6Example[window.exampleSelector.value]) {
-          ({ code } = window.es6Example[window.exampleSelector.value]);
+          ({ code, onStart } = window.es6Example[window.exampleSelector.value]);
         } else if (window.es7Example[window.exampleSelector.value]) {
-          ({ code } = window.es7Example[window.exampleSelector.value]);
+          ({ code, onStart } = window.es7Example[window.exampleSelector.value]);
         }
 
+        fiddle.setValue(onStart);
+        runFiddle();
         fiddle.setValue(code);
       }
     };

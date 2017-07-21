@@ -1,3 +1,4 @@
+
 /* global window */
 window.es6Example = window.es6Example || {};
 window.es6Example.cls = {};
@@ -30,6 +31,12 @@ let s = new Square(5);
 
 s.sayName();
 console.log(s.area);
+`;
+
+window.es6Example.cls.onStart =
+`
+console.log('Classes and Inheritance');
+console.log('A new syntax for declaring classes and inheritance in JavaScript. Class declaration is done by using the class keyword and extends keyword is used to show inheritance of another object.');
 `;
 
 window.es6Example.cls.display = 'Classes and Inheritance';

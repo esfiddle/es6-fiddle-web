@@ -38,4 +38,10 @@ for (let value of x.entries()) {
   console.log(value);
 }`;
 
+window.es6Example.map.onStart =
+`
+console.log('Map');
+console.log('Map is an iterable object that stores key-value pairs. Methods like get, set, delete, and more are provided.');
+`;
+
 window.es6Example.map.display = 'Map';

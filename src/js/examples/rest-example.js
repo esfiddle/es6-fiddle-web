@@ -18,4 +18,10 @@ let msg = format(
 
 console.log(msg);`;
 
+window.es6Example.rest.onStart =
+`
+console.log('Rest Parameters');
+console.log('The rest parameter is a representation of an indefinite number of arguments as an array.');
+`;
+
 window.es6Example.rest.display = 'Rest Parameters';

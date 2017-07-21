@@ -31,4 +31,10 @@ for (let v of newArray) {
     console.log(v);
 }`;
 
+window.es6Example.iterator.onStart =
+`
+console.log('Iterators');
+console.log('Iterators provides a way to iterate through an array or object and perform actions on each individual element.');
+`;
+
 window.es6Example.iterator.display = 'Iterators';
