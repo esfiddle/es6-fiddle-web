@@ -2,7 +2,7 @@ var mongoose = require('./mongoose'),
     Schema = mongoose.Schema;
 
 var usersSchema = new Schema({
-    
+
     githubId:Number,
     login: String,
     name: String,
@@ -23,10 +23,15 @@ var usersSchema = new Schema({
 usersSchema.statics.findOrCreate = function(profile,accessToken) {
     var Users = this;
     return Users.findOne({githubId:profile.id}).then( (user) => {
-            //If user found return that 
+            //If user found return that
             if(user) {
-                // TODO:Need to update accessToken for this user
-                return Promise.resolve(user);
+                // Updating accessToken is necessary for exportAsGist
+                if(user.accessToken !== accessToken){
+                    user.accessToken = accessToken;
+                    return user.save();
+                } else {
+                    return Promise.resolve(user);
+                }
             }
             //Create new user
             let NewUser = new Users({
@@ -35,8 +40,8 @@ usersSchema.statics.findOrCreate = function(profile,accessToken) {
                 name: profile._json.name,
                 email: profile._json.email? profile._json.email[0] : null,
                 avatar_url: profile._json.avatar_url,
-                url: profile._json.url,        
-                html_url: profile._json.html_url,   
+                url: profile._json.url,
+                html_url: profile._json.html_url,
                 location: profile._json.location,
                 bio: profile._json.bio,
                 public_repos: profile._json.public_repos,

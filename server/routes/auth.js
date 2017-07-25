@@ -14,7 +14,7 @@ module.exports = app => {
         res.send({ 'logged': req.isAuthenticated() });
     });
 
-    app.get('/auth/github', passport.authenticate('github', { scope: ['user:email'] }), (req, res) => {
+    app.get('/auth/github', passport.authenticate('github', { scope: ['user:email', 'gist'] }), (req, res) => {
         console.log('just to get rid of lint error !', res);
     });
 

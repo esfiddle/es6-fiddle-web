@@ -240,6 +240,9 @@ babel.onload = () => {
       // save the code
     document.querySelector('.save').onclick = () => clickEvents.saveBtn(fiddle);
 
+    // export as gist
+    $.getElement('.gist').onclick = () => clickEvents.exportAsGist(fiddle);
+
     // star the code
     $.getElement('.star').onclick = () => {
       const pathArr = window.location.pathname.split('/'),

@@ -6,6 +6,7 @@ var request = require('supertest'),
     app = require('./../server/app').app,
     Fiddles = require('./../server/db/fiddles'),
     passportMock = require('./passport-mock'),
+
     { testUser, testFiddle } = require('./seedData');
 
 // var testFiddle = new Fiddles({
@@ -183,6 +184,19 @@ describe('POST /save Authorized', function () {
 });
 
 
+describe('POST /gist/:fiddle unauthorized', function () {
+
+    it('should return 401 for unauthorized user', done => {
+        request(app).post('/gist/' + testFiddle.fiddleU1.fiddle)
+            .expect(401)
+            .end((err) => {
+                if (err) { return done(err); }
+                done();
+            });
+    });
+
+});
+
 describe('GET /fiddles/fiddle', function () {
     it('should get correct fiddle from DB', (done) => {
         request(app).get('/fiddles/' + testFiddle.fiddleGuest.fiddle)
@@ -347,7 +361,7 @@ describe('POST /private/:fiddleID', function () {
 
     // TEST FOR GET /fiddles/ API for private fiddles........
     describe('GET /fiddles/fiddle for private fiddle', function () {
-        
+
         it('should get private fiddle for logged in user.', (done) => {
             agent.get('/fiddles/' + testFiddle.fiddleU1.fiddle)
                 .expect(200)
@@ -356,7 +370,7 @@ describe('POST /private/:fiddleID', function () {
                 })
                 .end(done);
         });
-        
+
         it('should return 401 if user is not logged in and fiddle is private', (done) => {
             request(app).get('/fiddles/' + testFiddle.fiddleU1.fiddle)
                 .expect(401)

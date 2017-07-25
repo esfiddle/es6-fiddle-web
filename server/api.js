@@ -1,4 +1,5 @@
 // var mongo = require('mongodb').MongoClient,
+const fetch = require('node-fetch');
 const Fiddles = require('./db/fiddles');
 const Users = require('./db/users');
 
@@ -42,7 +43,6 @@ module.exports = function (app) {
 
   app.post('/save', (req, res) => {
     let fiddle;
-    //  console.log('user logged in = ', req.user);
     if (req.body.value) { // don't save anything empty
       if (req.body.fiddle !== -1 && req.isAuthenticated()) {  // Check if user trying to save existing fiddle;
         fiddle = req.body.fiddle;
@@ -135,7 +135,7 @@ module.exports = function (app) {
 
       // Only authorized user allowed to star a fiddle
       if (!req.isAuthenticated()) {
-        return res.status(401).json({ message: 'Only logged in user allowed to have private fiddle !' });
+        return res.status(401).json({ message: 'Only logged in users allowed to have private fiddles!' });
       }
 
 
@@ -158,4 +158,40 @@ module.exports = function (app) {
 
   });
 
+  app.post('/gist/:fiddleID', (req, res) => {
+
+    // Only authorized user allowed to export a gist
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({ message: 'Only logged in users can export fiddles to Github!' });
+    }
+
+    const fiddleID = req.params.fiddleID;
+    const token = req.user.accessToken;
+    const header = `/**\n  Exported from ESFiddle.net\n  Check it out here https://esfiddle.net/${fiddleID}\n**/`;
+    const code = req.body.value;
+    const content = `${header}\n\n${code}`;
+
+    Fiddles.findOne({ fiddle: fiddleID })
+    .then((fiddle) => {
+      const data = {
+        description: 'ESFiddle Generated Gist',
+        public: !fiddle.isPrivate,
+        files: {
+          'fiddle.js': {
+            content,
+          },
+        },
+      };
+      if (!fiddle) {
+        throw (`fiddle: ${fiddleID} Not Found !`);
+      } else {
+        fetch(`https://api.github.com/gists?access_token=${token}`, { method: 'POST', body: JSON.stringify(data) })
+          .then(gist => gist.json())
+          .then(json => res.json(json));
+      }
+    })
+    .catch( (e) => {
+      res.status(400).json({ message: e });
+    });
+  });
 };
