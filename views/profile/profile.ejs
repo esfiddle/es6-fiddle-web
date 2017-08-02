@@ -1,13 +1,13 @@
 
 <div class="content" class="clearfix">
-        <div class="userphoto"><img src= "<%= user.avatar_url %>" alt="default avatar"></div>
-        <div class="user-details">
-          <h1><%= user.name %></h1>
-          <section class="bio">
-            @<%= user.login %>
-          </section>
+  <div class="userphoto"><img src= "<%= user.avatar_url %>" alt="default avatar"></div>
+  <div class="user-details">
+    <h1><%= user.name %></h1>
+    <section class="bio">
+      @<%= user.login %>
+    </section>
 
-          <% include recentFiddles %>
-          <% include starredFiddles %>
-        </div>
-      </div><!-- @end #content -->
+    <% include recentFiddles %>
+    <% include starredFiddles %>
+  </div>
+</div><!-- @end #content -->

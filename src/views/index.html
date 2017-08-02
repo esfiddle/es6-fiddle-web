@@ -1,193 +1,193 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="Description" content="Try out ES6+ features and share them with your friends, right in your browser!
+  <head>
+    <meta charset="utf-8">
+    <meta name="Description" content="Try out ES6+ features and share them with your friends, right in your browser!
 With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) with our preset samples or create your own snippets to share with others.">
-        <meta name="Keywords" content="ES6, ES7, ES8, Ecmascript 2015, ES2015, ES2016, Ecmascript, Javascript, JS, TC39, ES2017, Ecmascript 2016">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="ES6, ES7, ES8, Ecmascript 2015, ES2015, ES2016, Ecmascript, Javascript, JS, TC39, ES2017, Ecmascript 2016">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ESFiddle</title>
-        <link rel="stylesheet" href="../../dist/style/es6-fiddle.css?__inline=true">
-        <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-        <link rel="icon" href="/images/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-    </head>
-    <body>
-        <div class="header">
-          <nav>
-            <div class="logo"><a href="/"><img src="/images/esfiddle.png"/></a></div>
-            <span class="loginBtns only-logged-profile"><a href="/github/myProfile">Profile</a></span>
-            <span class="loginBtns"><a href="/about">About</a></span>
-            <span class="loginBtns"><a href="/blog">Blog</a></span>
-            <span class="loginBtns only-loggedout"><a href="/auth/github">Login</a></span>
-            <span class="loginBtns only-logged"><a href="/github/logout">Logout</a></span>
-          </nav>
-          <nav>
-            <span class="layoutBtns settings">
-              <label for="settings-toggle"><i class="fa fa-cog" aria-hidden="true"></i></label>
-            </span>
-            <input type="checkbox" id="settings-toggle" class="settings-toggle">
-            <div class="settings-popup">
-              <span class="horizontal layoutBtns">
-                <i class="fa fa-pause" aria-hidden="true"></i>
-                Horizontal Layout
-              </span>
-              <span class="vertical layoutBtns">
-                <i class="fa fa-pause" aria-hidden="true"></i>
-                Vertical Layout
-              </span>
-              <span class="dark-mode">
-                <div class="moon">
-                  <i class="fa fa-moon-o" aria-hidden="true"></i>
-                  Dark Mode
-                </div>
-                <div class="sun">
-                  <i class="fa fa-sun-o sun" aria-hidden="true"></i>
-                  Light Mode
-                </div>
-              </span>
-              <div class="selector-wrapper">
-                  <select class="change-theme">
-                      <option selected disabled>Choose Theme</option>
-                      <option>default</option>
-                      <option>3024-day</option>
-                      <option>3024-night</option>
-                      <option>abcdef</option>
-                      <option>ambiance</option>
-                      <option>base16-dark</option>
-                      <option>base16-light</option>
-                      <option>bespin</option>
-                      <option>blackboard</option>
-                      <option>cobalt</option>
-                      <option>colorforth</option>
-                      <option>dracula</option>
-                      <option>eclipse</option>
-                      <option>elegant</option>
-                      <option>erlang-dark</option>
-                      <option>hopscotch</option>
-                      <option>icecoder</option>
-                      <option>isotope</option>
-                      <option>lesser-dark</option>
-                      <option>liquibyte</option>
-                      <option>material</option>
-                      <option>mbo</option>
-                      <option>mdn-like</option>
-                      <option>midnight</option>
-                      <option>monokai</option>
-                      <option>neat</option>
-                      <option>neo</option>
-                      <option>night</option>
-                      <option>panda-syntax</option>
-                      <option>paraiso-dark</option>
-                      <option>paraiso-light</option>
-                      <option>pastel-on-dark</option>
-                      <option>railscasts</option>
-                      <option>rubyblue</option>
-                      <option>seti</option>
-                      <option>solarized dark</option>
-                      <option>solarized light</option>
-                      <option>the-matrix</option>
-                      <option>tomorrow-night-bright</option>
-                      <option>tomorrow-night-eighties</option>
-                      <option>ttcn</option>
-                      <option>twilight</option>
-                      <option>vibrant-ink</option>
-                      <option>xq-dark</option>
-                      <option>xq-light</option>
-                      <option>yeti</option>
-                      <option>zenburn</option>
-                  </select>
-              </div>
+    <title>ESFiddle</title>
+    <link rel="stylesheet" href="../../dist/style/es6-fiddle.css?__inline=true">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" href="/images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <div class="logo"><a href="/"><img src="/images/esfiddle.png"/></a></div>
+        <span class="loginBtns only-logged-profile"><a href="/github/myProfile">Profile</a></span>
+        <span class="loginBtns"><a href="/about">About</a></span>
+        <span class="loginBtns"><a href="/blog">Blog</a></span>
+        <span class="loginBtns only-loggedout"><a href="/auth/github">Login</a></span>
+        <span class="loginBtns only-logged"><a href="/github/logout">Logout</a></span>
+      </nav>
+      <nav>
+        <span class="layoutBtns settings">
+          <label for="settings-toggle"><i class="fa fa-cog" aria-hidden="true"></i></label>
+        </span>
+        <input type="checkbox" id="settings-toggle" class="settings-toggle">
+        <div class="settings-popup">
+          <span class="horizontal layoutBtns">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+            Horizontal Layout
+          </span>
+          <span class="vertical layoutBtns">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+            Vertical Layout
+          </span>
+          <span class="dark-mode">
+            <div class="moon">
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+              Dark Mode
             </div>
-            <span><a href="https://github.com/esfiddle/esfiddle" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></span>
-          </nav>
-        </div>
-        <div class="content">
-            <div class="code-wrapper">
-              <div class="fiddle-wrapper wrapper">
-                <div class="fiddle-header wrapper-header">
-                    <span>Code</span>
-                    <nav>
-                      <div class="share" data-balloon="Share Fiddle" data-balloon-pos="up">
-                          <i class="fa fa-share" aria-hidden="true"></i>
-                          <div class="share-drop">
-                              <label for="share-link">Link</label>
-                              <input value="" class="share-link">
-                              <label for="shared-embed">Embed</label>
-                              <input value="" class="share-embed">
-                              <a class="tweet" href="#" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                Tweet
-                              </a>
-                          </div>
-                      </div>
-                      <div title="save" class="save" data-balloon="Save Fiddle" data-balloon-pos="up">
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                      </div>
-                      <div title="star" class="star" data-balloon="Star Fiddle" data-balloon-pos="up">
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                      </div>
-                      <div title="private" class="private" data-balloon="Public Fiddle" data-balloon-pos="up">
-                        <i class="fa fa-globe" aria-hidden="true"></i>
-                        <!--<i class="fa fa-lock" aria-hidden="true"></i>-->
-                      </div>
-                      <div title="lint" class="lint" data-balloon="Lint Fiddle" data-balloon-pos="up">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                      </div>
-                      <div title="run" class="run" data-balloon="Run Fiddle" data-balloon-pos="up">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                      </div>
-                      <div class="selector-wrapper">
-                        <select class="examples">
-                            <option selected disabled>ES6 Examples</option>
-                        </select>
-                      </div>
-                    </nav>
-                </div>
-                <div class="fiddle wrapper-content"></div>
-                <div class="resizer"></div>
+            <div class="sun">
+              <i class="fa fa-sun-o sun" aria-hidden="true"></i>
+              Light Mode
             </div>
-              <div class="result-wrapper wrapper">
-                <div class="result-header wrapper-header"><span>Console</span></div>
-                <iframe class="result wrapper-content"></iframe>
-            </div>
+          </span>
+          <div class="selector-wrapper">
+            <select class="change-theme">
+              <option selected disabled>Choose Theme</option>
+              <option>default</option>
+              <option>3024-day</option>
+              <option>3024-night</option>
+              <option>abcdef</option>
+              <option>ambiance</option>
+              <option>base16-dark</option>
+              <option>base16-light</option>
+              <option>bespin</option>
+              <option>blackboard</option>
+              <option>cobalt</option>
+              <option>colorforth</option>
+              <option>dracula</option>
+              <option>eclipse</option>
+              <option>elegant</option>
+              <option>erlang-dark</option>
+              <option>hopscotch</option>
+              <option>icecoder</option>
+              <option>isotope</option>
+              <option>lesser-dark</option>
+              <option>liquibyte</option>
+              <option>material</option>
+              <option>mbo</option>
+              <option>mdn-like</option>
+              <option>midnight</option>
+              <option>monokai</option>
+              <option>neat</option>
+              <option>neo</option>
+              <option>night</option>
+              <option>panda-syntax</option>
+              <option>paraiso-dark</option>
+              <option>paraiso-light</option>
+              <option>pastel-on-dark</option>
+              <option>railscasts</option>
+              <option>rubyblue</option>
+              <option>seti</option>
+              <option>solarized dark</option>
+              <option>solarized light</option>
+              <option>the-matrix</option>
+              <option>tomorrow-night-bright</option>
+              <option>tomorrow-night-eighties</option>
+              <option>ttcn</option>
+              <option>twilight</option>
+              <option>vibrant-ink</option>
+              <option>xq-dark</option>
+              <option>xq-light</option>
+              <option>yeti</option>
+              <option>zenburn</option>
+            </select>
           </div>
         </div>
-        <div class="snackbar"></div>
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.9.4/jshint.min.js"></script>
-        <script async src="/src/es6-fiddle.js"></script>
-        <script async src="/src/authenticated.js"></script>
-        <script async src="https://use.fontawesome.com/52284be701.js"></script>
-        <noscript id="deferred-styles">
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.2.4/balloon.min.css"/>
-        </noscript>
-        <script>
-          var loadDeferredStyles = function() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement)
-            addStylesNode.parentElement.removeChild(addStylesNode);
-          };
-          var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-              webkitRequestAnimationFrame || msRequestAnimationFrame;
-          if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-          else window.addEventListener('load', loadDeferredStyles);
-        </script>
-    </body>
+        <span><a href="https://github.com/esfiddle/esfiddle" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></span>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="code-wrapper">
+        <div class="fiddle-wrapper wrapper">
+          <div class="fiddle-header wrapper-header">
+            <span>Code</span>
+            <nav>
+              <div class="share" data-balloon="Share Fiddle" data-balloon-pos="up">
+                <i class="fa fa-share" aria-hidden="true"></i>
+                <div class="share-drop">
+                  <label for="share-link">Link</label>
+                  <input value="" class="share-link">
+                  <label for="shared-embed">Embed</label>
+                  <input value="" class="share-embed">
+                  <a class="tweet" href="#" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    Tweet
+                  </a>
+                </div>
+              </div>
+              <div title="save" class="save" data-balloon="Save Fiddle" data-balloon-pos="up">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+              </div>
+              <div title="star" class="star" data-balloon="Star Fiddle" data-balloon-pos="up">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+              </div>
+              <div title="private" class="private" data-balloon="Public Fiddle" data-balloon-pos="up">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <!--<i class="fa fa-lock" aria-hidden="true"></i>-->
+              </div>
+              <div title="lint" class="lint" data-balloon="Lint Fiddle" data-balloon-pos="up">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </div>
+              <div title="run" class="run" data-balloon="Run Fiddle" data-balloon-pos="up">
+                <i class="fa fa-play" aria-hidden="true"></i>
+              </div>
+              <div class="selector-wrapper">
+                <select class="examples">
+                  <option selected disabled>ES6 Examples</option>
+                </select>
+              </div>
+            </nav>
+          </div>
+          <div class="fiddle wrapper-content"></div>
+          <div class="resizer"></div>
+        </div>
+        <div class="result-wrapper wrapper">
+          <div class="result-header wrapper-header"><span>Console</span></div>
+          <iframe class="result wrapper-content"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="snackbar"></div>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.9.4/jshint.min.js"></script>
+    <script async src="/src/es6-fiddle.js"></script>
+    <script async src="/src/authenticated.js"></script>
+    <script async src="https://use.fontawesome.com/52284be701.js"></script>
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.2.4/balloon.min.css"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+  </body>
 </html>

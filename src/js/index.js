@@ -35,7 +35,7 @@ window.embedded = embedded;
 window.exampleSelector = $.getElement('.examples');
 examples.addExamples();
 
-    // check to see if the share button should be shown
+// check to see if the share button should be shown
 if (fiddleId && !embedded) {
   const shareEl = $.getElement('.share');
   $.addStyleTo(startFiddle, 'display', 'block');
@@ -282,7 +282,7 @@ babel.onload = () => {
       localStorage.setItem('theme', theme);
     };
 
-            // load the selected code
+    // load the selected code
     window.exampleSelector.onchange = () => {
       if (window.exampleSelector.value) {
         let code = 'Example Can Not Be Found';

@@ -4,7 +4,8 @@ module.exports = {
         "import"
     ],
     "rules": {
-      "one-var": 0
+      "one-var": 0,
+      "no-underscore-dangle": "off",
     },
     "globals": {
       "document": 1,
@@ -14,6 +15,9 @@ module.exports = {
       "XMLHttpRequest": 1,
       "fetch": 1,
       "JSHINT": 1,
-      "Headers": 1
+      "Headers": 1,
+      "describe": 1,
+      "it": 1,
+      "beforeEach": 1,
     }
 };

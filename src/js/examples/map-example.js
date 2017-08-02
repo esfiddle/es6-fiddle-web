@@ -4,10 +4,10 @@ window.es6Example.map = {};
 
 window.es6Example.map.code =
 `let x = new Map([[1, 'is a number key']]);
-let today = new Date()
+let today = new Date();
 
 //anything can be a key
-x.set(today.toString(), 111)
+x.set(today.toString(), 111);
 x.set(today, 222);
 x.delete(today.toString());
 

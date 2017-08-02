@@ -1,6 +1,6 @@
-let passport = require('passport'),
-  GitHubStrategy = require('passport-github2').Strategy,
-  Users = require('./db/users');
+const passport = require('passport');
+const { Strategy: GitHubStrategy } = require('passport-github2');
+const Users = require('./db/users');
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -21,6 +21,5 @@ passport.use(new GitHubStrategy({
       done(err, null);
     });
 }));
-
 
 module.exports = passport;
