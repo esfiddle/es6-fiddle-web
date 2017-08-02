@@ -3,22 +3,20 @@
  * License: MIT
  */
 
-var passport = require('passport'),
-    StrategyMock = require('./strategy-mock'),
-    Users = require('./../server/db/users');
+const passport = require('passport');
+const StrategyMock = require('./strategy-mock');
+const Users = require('./../server/db/users');
 
-function verifyFunction(user, done) { // user = { id: 1};
-    // Emulate database fetch result
-    Users.findById(user.id).then ( user => done(null,user))
-                           .catch( e => done(e,null));
-
+function verifyFunction(user, done) {
+  Users.findById(user.id)
+    .then(foundUser => done(null, foundUser))
+    .catch(e => done(e, null));
 }
 
-module.exports = function(app, options) {
-    // create your verify function on your own -- should do similar things as
-    // the "real" one.
-    passport.use(new StrategyMock(options, verifyFunction));
-    app.get('/mock/login', passport.authenticate('mock'), (req,res) => {
-        res.send({user:req.user});
-    });
+module.exports = function (app, options) {
+  passport.use(new StrategyMock(options, verifyFunction));
+
+  app.get('/mock/login', passport.authenticate('mock'), (req, res) => {
+    res.send({ user: req.user });
+  });
 };

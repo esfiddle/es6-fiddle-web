@@ -4,12 +4,12 @@
     <i class="fa fa-calendar" aria-hidden="true"></i>
     <%= (post.date.getMonth() + 1) + '.' + post.date.getDate() + '.' + post.date.getFullYear() %>
   </div>
- <div class="categories">
-    | Category:
-   <span class="category"><a href="/categories/<%=  post.category %>"><%=  post.category %></a></span>
- </div>
+  <div class="categories">
+      | Category:
+    <span class="category"><a href="/categories/<%=  post.category %>"><%=  post.category %></a></span>
+  </div>
   <div  class="thumbnail">
-      <img src="<%= post.image %>" />
+    <img src="<%= post.image %>" />
   </div>
   <div class="post">
     <%- post.preview %>

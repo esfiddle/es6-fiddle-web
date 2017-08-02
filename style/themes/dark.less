@@ -8,25 +8,25 @@
     }
   }
   .content {
-        .wrapper-header {
-            background-color: @blue-dark;
-            color: @white;
-            .transition(all, 0.5s);
-        }
+    .wrapper-header {
+      background-color: @blue-dark;
+      color: @white;
+      .transition(all, 0.5s);
+  }
 
-        .result {
-            background-color: @gray-darker;
-            color: darken(white, 25%);
-            .transition(all, 0.5s);
-        }
+  .result {
+      background-color: @gray-darker;
+      color: darken(white, 25%);
+      .transition(all, 0.5s);
+  }
 
-        .wrapper {
-            &.result-wrapper {
-                .result {
-                    border: none;
-                    border-left: 1px solid darken(@white, 70%);
-                }
-            }
+  .wrapper {
+    &.result-wrapper {
+      .result {
+        border: none;
+        border-left: 1px solid darken(@white, 70%);
         }
+      }
     }
+  }
 }

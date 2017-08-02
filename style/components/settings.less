@@ -7,17 +7,17 @@
       transform: rotate(720deg);
     }
   }
-    & ~ .settings-toggle {
-     position: absolute;
-     top: -9999px;
-     left: -9999px;
+  & ~ .settings-toggle {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
 
-     &:checked {
-       & ~ .settings-popup {
-         opacity: 1;
-         visibility: visible;
-       }
-     }
+    &:checked {
+      & ~ .settings-popup {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
     & ~ .settings-popup {
       &:before {
         width: 0;

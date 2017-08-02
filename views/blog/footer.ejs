@@ -1,21 +1,21 @@
-          </div>
-        </div>
       </div>
     </div>
-    <footer>
-      <div class="logo"><a href="/"><img src="images/esfiddle.png"></a></div>
-      <div class="nav nav-list">
-        <span class="nav-header">Categories:</span>
-        <ul>
-          <% getCategories().forEach(function(cat) { %>
-            <li><a href="/categories/<%= cat %>"><%= cat %></a></li>
-          <% }) %>
-        </ul>
-      </div>
-    </footer>
-    <script async src="src/authenticated.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+  </div>
+</div>
+<footer>
+  <div class="logo"><a href="/"><img src="../images/esfiddle.png"></a></div>
+  <div class="nav nav-list">
+    <span class="nav-header">Categories:</span>
+    <ul>
+      <% getCategories().forEach(function(cat) { %>
+        <li><a href="/categories/<%= cat %>"><%= cat %></a></li>
+      <% }) %>
+    </ul>
+  </div>
+</footer>
+<script async src="../src/authenticated.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script>
   var disqus_config = function () {
     this.page.url = window.location.href ;

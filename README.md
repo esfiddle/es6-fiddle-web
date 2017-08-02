@@ -28,6 +28,9 @@ mv sample.env .env
 # Open a new terminal window and start MongoDB
 mongod --dbpath path/to/your/db/folder
 
+# Install the dependencies 
+npm i
+
 # Start the application
 npm start
 ```
@@ -46,6 +49,6 @@ We welcome pull requests from first-timers and seasoned veteran programmers alik
 
 In addition to this we are looking for maintainers. Please come and chat with us in our [gitter](https://gitter.im/esfiddle/Lobby) if you are interested.
 
-Please first review the [Code of Conduct](/docs/CODE_OF_CONDUCT.md) and the [Contributing guide](/docs/CONTRIBUTE.md) to help you get setup.
+Please first review the [Code of Conduct](/docs/CODE_OF_CONDUCT.md) and the [Contributing guide](/docs/CONTRIBUTE.md) to help you get setup. Our [Style Guide](/docs/AirbnbStyleGuide/README.md) is based on the [Airbnb style guide](https://github.com/airbnb/javascript).
 
 Then have a look at some of the [projects issues](https://github.com/esfiddle/esfiddle/issues) Checkout the labels [first-timers-only](https://github.com/esfiddle/esfiddle/labels/first-timers-only), [bite-size](https://github.com/esfiddle/esfiddle/labels/bite-size) (for small issues) and [up-for-grabs](https://github.com/esfiddle/esfiddle/labels/up-for-grabs).

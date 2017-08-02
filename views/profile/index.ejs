@@ -22,13 +22,13 @@ With ESFiddle you can sample ES6 (ECMAScript 2015) and ES7 (ECMAScript 2016) wit
       </nav>
     </div>
 
-  <div class="profile">
-    <% if (typeof user === 'undefined') { %>
-        <% include notFound.ejs %>
-    <% } else { %>
-        <% include profile.ejs %>
-    <% } %>
-  </div><!-- @end #w -->
-</body>
-<script async src="../src/authenticated.js"></script>
+    <div class="profile">
+      <% if (typeof user === 'undefined') { %>
+          <% include notFound.ejs %>
+      <% } else { %>
+          <% include profile.ejs %>
+      <% } %>
+    </div><!-- @end #w -->
+  </body>
+  <script async src="../src/authenticated.js"></script>
 </html>
