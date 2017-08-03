@@ -48,6 +48,34 @@ const clickEvents = {
     }
   },
 
+  exportAsGist(fiddle) {
+    const code = fiddle.getValue(),
+      pathArr = window.location.pathname.split('/'),
+      fiddleID = pathArr[1].length > 1 ? pathArr[1] : -1;
+
+    if (code.length) {
+      fetch(`/gist/${fiddleID}`, {
+        credentials: 'same-origin',
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify({
+          value: code,
+        }),
+      })
+      .then(resp => resp.json())
+      .then((data) => {
+        if (data.message) {
+          snackbar.showSnackbar(data.message);
+        }
+        snackbar.showSnackbar('Gist created! View at https://gists.github.com');
+      });
+    } else {
+      snackbar.showSnackbar('You don\'t appear to have any code or its not saved.');
+    }
+  },
+
   saveBtn(fiddle) {
     const code = fiddle.getValue(),
       pathArr = window.location.pathname.split('/');

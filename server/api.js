@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const Fiddles = require('./db/fiddles');
 const Users = require('./db/users');
 
@@ -10,7 +11,7 @@ module.exports = (app) => {
       Fiddles.findOne({ fiddle }, (err, item) => {
         if (!item) {
           return res.status(404).json({
-            message: `/* Oops! I got 404, 
+            message: `/* Oops! I got 404,
             * but not the fiddle '${fiddle}' you are looking for :(
             */
             `,
@@ -132,5 +133,42 @@ module.exports = (app) => {
       })
       .then(fiddle => res.json({ fiddle }))
       .catch(err => res.status(400).json({ message: err }));
+  });
+
+  app.post('/gist/:fiddleID', (req, res) => {
+
+    // Only authorized user allowed to export a gist
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({ message: 'Only logged in users can export fiddles to Github!' });
+    }
+
+    const fiddleID = req.params.fiddleID;
+    const token = req.user.accessToken;
+    const header = `/**\n  Exported from ESFiddle.net\n  Check it out here https://esfiddle.net/${fiddleID}\n**/`;
+    const code = req.body.value;
+    const content = `${header}\n\n${code}`;
+
+    Fiddles.findOne({ fiddle: fiddleID })
+    .then((fiddle) => {
+      const data = {
+        description: 'ESFiddle Generated Gist',
+        public: !fiddle.isPrivate,
+        files: {
+          'fiddle.js': {
+            content,
+          },
+        },
+      };
+      if (!fiddle) {
+        throw (`fiddle: ${fiddleID} Not Found !`);
+      } else {
+        fetch(`https://api.github.com/gists?access_token=${token}`, { method: 'POST', body: JSON.stringify(data) })
+          .then(gist => gist.json())
+          .then(json => res.json(json));
+      }
+    })
+    .catch( (e) => {
+      res.status(400).json({ message: e });
+    });
   });
 };

@@ -25,18 +25,18 @@ module.exports = (app) => {
       res.redirect('/github/myProfile');
     });
 
-  app.get('/github/login', (req, res) => {
-    res.render('login');
-  });
+    app.get('/auth/github', passport.authenticate('github', { scope: ['user:email', 'gist'] }), (req, res) => {
+        console.log('just to get rid of lint error !', res);
+    });
 
-  app.get('/github/myProfile', ensureAuthenticated, (req, res) => {
-    Fiddles.find({ userId: req.user._id })
-      .then((fiddles) => {
-        res.render('profile', {
-          user: req.user,
-          fiddles,
-          startedFiddles: req.user.startedFiddles,
-          message: req.flash(),
+    app.get('/auth/github/callback',
+        passport.authenticate('github', {
+            failureRedirect: '/github/login',
+            failureFlash: true,
+            successFlash: 'Welcome!'
+        }), (req, res) => {
+            // Successful authentication, redirect home.
+            res.redirect('/github/myProfile');
         });
       })
       .catch(e => res.status(400).send(e));
