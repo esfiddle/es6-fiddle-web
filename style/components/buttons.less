@@ -1,63 +1,63 @@
 .loginBtns,
 .layoutBtns {
-  cursor: pointer;
-  padding: 3px;
+    cursor: pointer;
+    padding: 3px;
 }
 
 .horizontal {
-  i {
-    transform: rotateZ(90deg);
-  }
+    i {
+        transform: rotateZ(90deg);
+    }
 }
 
 .share {
-  display: none;
+    display: none;
 
-  .share-drop {
-    &:before {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 5px 6px 5px;
-      border-color: transparent transparent @white transparent;
-      content: '';
-      display: block;
-      position: absolute;
-      top: -6px;
-      right: 17px;
+    .share-drop {
+        &:before {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 6px 5px;
+            border-color: transparent transparent @white transparent;
+            content: '';
+            display: block;
+            position: absolute;
+            top: -6px;
+            right: 17px;
+        }
+
+        position: absolute;
+        background: @white;
+        padding: 10px;
+        color: @gray-dark;
+        border: 1px solid darken(@white, 10%);
+        right: -25px;
+        margin-top: 30px;
+        z-index: 999;
+        top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        font-size: 12px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s,
+        opacity 200ms ease;
+
+        label {
+            padding-bottom: 2px;
+        }
+
+        input {
+            display: block;
+            color: @gray-dark;
+            width: 100%;
+            margin-bottom: 5px;
+        }
     }
 
-    position: absolute;
-    background: @white;
-    padding: 10px;
-    color: @gray-dark;
-    border: 1px solid darken(@white, 10%);
-    right: -25px;
-    margin-top: 30px;
-    z-index: 999;
-    top: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 200px;
-    font-size: 12px;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 200ms ease;
-
-    label {
-      padding-bottom: 2px;
-    }
-
-    input {
-      display: block;
-      color: @gray-dark;
-      width: 100%;
-      margin-bottom: 5px;
-    }
-  }
-
-<<<<<<< HEAD
-    .gist{
+    .gist {
         color: @blue-light;
         text-decoration: none;
         transition: 200ms all ease;
@@ -69,12 +69,5 @@
             opacity: 1;
             visibility: visible;
         }
-=======
-  &:hover {
-    .share-drop {
-      opacity: 1;
-      visibility: visible;
->>>>>>> master
     }
-  }
 }

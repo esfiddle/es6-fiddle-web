@@ -1,68 +1,3 @@
-<<<<<<< HEAD
-/* global it describe beforeEach */
-
-//var mongo = require('mongodb').MongoClient,
-var request = require('supertest'),
-    expect = require('chai').expect,
-    app = require('./../server/app').app,
-    Fiddles = require('./../server/db/fiddles'),
-    passportMock = require('./passport-mock'),
-
-    { testUser, testFiddle } = require('./seedData');
-
-// var testFiddle = new Fiddles({
-//     fiddle: parseInt( Date.now() , 10).toString(36),
-//     value: "console.log('Testing....');"
-// });
-
-// testFiddle.save().then ( (fiddle) => console.log('Test Fiddle Saved', JSON.stringify(fiddle,undefined,2)))
-//                  .catch( e => console.log('Error while saving test fiddle',e));
-
-
-describe('POST /save', function () {
-
-    it('Should save fiddle in to database', (done) => {
-        var fiddleValue = 'console.log(\'Testing....\');'
-
-        request(app).post('/save').send({ value: fiddleValue })
-            .expect(200)
-            .expect((res) => {
-                expect(res.body.saved).to.be.true;
-                expect(res.body.fiddle).to.be.a('string');
-            })
-            .end((err, res) => {
-                if (err) { return done(err); }
-                // Make sure fiddle is saved in database
-                Fiddles.findOne({ fiddle: res.body.fiddle }, function (err, item) {
-                    if (err) {
-                        return done(err);
-                    }
-                    expect(item).to.not.null;
-                    expect(item.fiddle).to.equal(res.body.fiddle);
-                    expect(item.value).to.equal(fiddleValue);
-                    done();
-                });
-            });
-    });
-
-    it('Should return 400 Bad Request for empty fiddle (no value)', (done) => {
-        request(app).post('/save').send({})
-            .expect(400)
-            .expect(res => {
-                expect(res.body).to.empty;
-            })
-            .end(done);
-    });
-
-});
-
-describe('POST /save Authorized', function () {
-    var agent = request.agent(app);
-    beforeEach(function (done) {
-        passportMock(app, {
-            passAuthentication: true,
-            userId: testUser.user1._id
-=======
 /* eslint-disable no-unused-expressions */
 
 const request = require('supertest');
@@ -94,7 +29,6 @@ describe('POST /save', () => {
           expect(item.fiddle).to.equal(res.body.fiddle);
           expect(item.value).to.equal(fiddleValue);
           return done();
->>>>>>> master
         });
       });
   });
@@ -273,7 +207,6 @@ describe('GET /fiddles/fiddle', () => {
 describe('POST /star/:fiddle', () => {
   const agent = request.agent(app);
 
-<<<<<<< HEAD
 describe('POST /gist/:fiddle unauthorized', function () {
 
     it('should return 401 for unauthorized user', done => {
@@ -297,12 +230,6 @@ describe('GET /fiddles/fiddle', function () {
                 expect(res.body.value).to.equal(testFiddle.fiddleGuest.value);
             })
             .end(done);
-=======
-  beforeEach((done) => {
-    passportMock(app, {
-      passAuthentication: true,
-      userId: testUser.user1._id,
->>>>>>> master
     });
     agent.get('/mock/login')
       .end((err) => {
@@ -476,7 +403,6 @@ describe('POST /private/:fiddleID', () => {
 
               return done();
             });
-<<<<<<< HEAD
     });
 
     // TEST FOR GET /fiddles/ API for private fiddles........
@@ -515,10 +441,4 @@ describe('POST /private/:fiddleID', () => {
 
 
     });
-
-=======
-        });
-    });
-  });
->>>>>>> master
 });

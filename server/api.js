@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// var mongo = require('mongodb').MongoClient,
 const fetch = require('node-fetch');
-=======
->>>>>>> master
 const Fiddles = require('./db/fiddles');
 const Users = require('./db/users');
 
@@ -15,7 +11,7 @@ module.exports = (app) => {
       Fiddles.findOne({ fiddle }, (err, item) => {
         if (!item) {
           return res.status(404).json({
-            message: `/* Oops! I got 404, 
+            message: `/* Oops! I got 404,
             * but not the fiddle '${fiddle}' you are looking for :(
             */
             `,
@@ -44,58 +40,6 @@ module.exports = (app) => {
   });
 
   app.post('/save', (req, res) => {
-<<<<<<< HEAD
-    let fiddle;
-    if (req.body.value) { // don't save anything empty
-      if (req.body.fiddle !== -1 && req.isAuthenticated()) {  // Check if user trying to save existing fiddle;
-        fiddle = req.body.fiddle;
-      } else {
-        fiddle = parseInt(Date.now(), 10).toString(36);
-      }
-      Fiddles.findOne({ fiddle }, (err, item) => {
-        if (!item) { // If no fiddle found save new fiddle
-          const newFiddle = new Fiddles({
-            fiddle,
-            value: req.body.value,
-          });
-          if (req.isAuthenticated()) {
-            newFiddle.userId = req.user._id;
-          }
-          newFiddle.save(() => {
-            console.log('       Inserted fiddle at', `${fiddle}.`);
-            res.json({      // send response after saving fiddle
-              saved: true,
-              fiddle,
-            });
-          });
-        } else { // Existing fiddle found update that fiddle
-          if (item.userId && item.userId.toHexString() === req.user._id) {
-            item.value = req.body.value;
-            item.save().then(() => {
-              console.log('       updated fiddle at', `${fiddle}.`);
-              res.json({      // send response after saving fiddle
-                saved: true,
-                fiddle,
-              });
-            })
-              .catch(() => res.status(400).send());
-          } else {
-            fiddle = parseInt(Date.now(), 10).toString(36);
-            const newFiddle = new Fiddles({
-              fiddle,
-              value: req.body.value,
-              userId: req.user._id,
-            });
-            newFiddle.save().then(() => {
-              console.log('       Inserted fiddle at', `${fiddle}.`);
-              res.json({      // send response after saving fiddle
-                saved: true,
-                fiddle,
-              });
-            })
-              .catch(() => res.status(400).send());
-          }
-=======
     if (!req.body.value) {
       return res.status(400).send();
     }
@@ -112,7 +56,6 @@ module.exports = (app) => {
         });
         if (req.isAuthenticated()) {
           newFiddle.userId = req.user._id;
->>>>>>> master
         }
         return newFiddle.save(() => res.json({ saved: true, fiddle }));
       }
@@ -168,16 +111,7 @@ module.exports = (app) => {
   });
 
   app.post('/private/:fiddleID', (req, res) => {
-<<<<<<< HEAD
-      const fiddleID = req.params.fiddleID;
-
-      // Only authorized user allowed to star a fiddle
-      if (!req.isAuthenticated()) {
-        return res.status(401).json({ message: 'Only logged in users allowed to have private fiddles!' });
-      }
-=======
     const { fiddleID } = req.params;
->>>>>>> master
 
     if (!req.isAuthenticated()) {
       return res.status(401).json({ message: 'Only logged in user allowed to have private fiddle !' });
@@ -200,7 +134,6 @@ module.exports = (app) => {
       .then(fiddle => res.json({ fiddle }))
       .catch(err => res.status(400).json({ message: err }));
   });
-<<<<<<< HEAD
 
   app.post('/gist/:fiddleID', (req, res) => {
 
@@ -238,6 +171,4 @@ module.exports = (app) => {
       res.status(400).json({ message: e });
     });
   });
-=======
->>>>>>> master
 };
