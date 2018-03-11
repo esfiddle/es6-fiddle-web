@@ -286,6 +286,8 @@ if (!embedded) {
         ({ code } = window.es6Example[window.exampleSelector.value]);
       } else if (window.es7Example[window.exampleSelector.value]) {
         ({ code } = window.es7Example[window.exampleSelector.value]);
+			} else if (window.es8Example[window.exampleSelector.value]) {
+        ({ code } = window.es8Example[window.exampleSelector.value]);
       }
 
       fiddle.setValue(code);
