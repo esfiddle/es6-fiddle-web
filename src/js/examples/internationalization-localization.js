@@ -1,7 +1,6 @@
 window.es6Example.internationalization = {};
 
-window.es6Example.internationalization.code =
-`let l10nDE = new Intl.Collator("de"); // German
+window.es6Example.internationalization.code = `let l10nDE = new Intl.Collator("de"); // German
 let l10nSV = new Intl.Collator("sv"); // Sweden
 /* Language sensitive string comparison using Collator */
 // German 'ä' sorts with a
@@ -38,4 +37,5 @@ console.log(l10nUSD.format(number)); // Number formatted with $ symbol
 console.log(l10nJPY.format(number)); // Japan drops sub unit
 `;
 
-window.es6Example.internationalization.display = 'Internationalization and Localization';
+window.es6Example.internationalization.display =
+  "Internationalization and Localization";

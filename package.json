@@ -82,7 +82,8 @@
     "postinstall": "grunt build",
     "start": "grunt dev",
     "build": "grunt build",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --reporter dot test/"
+    "cover":
+      "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --reporter dot test/"
   },
   "engines": {
     "node": "^6.11.1 || ^7.10.1 || >=8.1.4"

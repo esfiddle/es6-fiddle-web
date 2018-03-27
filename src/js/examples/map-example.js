@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.map = {};
 
-window.es6Example.map.code =
-`let x = new Map([[1, 'is a number key']]);
+window.es6Example.map.code = `let x = new Map([[1, 'is a number key']]);
 let today = new Date();
 
 //anything can be a key
@@ -38,4 +37,4 @@ for (let value of x.entries()) {
   console.log(value);
 }`;
 
-window.es6Example.map.display = 'Map';
+window.es6Example.map.display = "Map";

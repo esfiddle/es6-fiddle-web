@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.promise = {};
 
-window.es6Example.promise.code =
-`var oneOrTwo = function (num) {
+window.es6Example.promise.code = `var oneOrTwo = function (num) {
   return new Promise(function (resolve, reject) {
     if (num === 1) {
       setTimeout(function () {
@@ -48,4 +47,4 @@ Promise.all([
 });
 `;
 
-window.es6Example.promise.display = 'Promises';
+window.es6Example.promise.display = "Promises";

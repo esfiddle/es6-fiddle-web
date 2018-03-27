@@ -1,7 +1,6 @@
 {
   "name": "esfiddle",
-  "scripts": {
-  },
+  "scripts": {},
   "env": {
     "GITHUB_CLIENT_ID": {
       "required": true
@@ -22,12 +21,8 @@
       "required": true
     }
   },
-  "formation": {
-  },
-  "addons": [
-    "mongolab",
-    "opbeat"
-  ],
+  "formation": {},
+  "addons": ["mongolab", "opbeat"],
   "buildpacks": [
     {
       "url": "heroku/nodejs"

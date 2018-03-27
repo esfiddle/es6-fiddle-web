@@ -1,33 +1,33 @@
-const mongoose = require('./mongoose');
+const mongoose = require("./mongoose");
 
 const { Schema } = mongoose;
 
 const fiddlesSchema = new Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId
   },
   fiddle: {
     type: String,
-    require: true,
+    require: true
   },
   value: {
     type: String,
-    require: true,
+    require: true
   },
   starCounter: {
     type: Number,
-    default: 0,
+    default: 0
   },
   isPrivate: {
     type: Boolean,
-    default: false,
+    default: false
   },
   libraries: {
     type: Array,
-    default: [],
-  },
+    default: []
+  }
 });
 
-const Fiddles = mongoose.model('Fiddles', fiddlesSchema);
+const Fiddles = mongoose.model("Fiddles", fiddlesSchema);
 
 module.exports = Fiddles;

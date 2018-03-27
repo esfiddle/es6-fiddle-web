@@ -15,11 +15,13 @@ Many anticipated that it would be a smaller set of features due to the short tim
 It turned out we were getting just 2 new methods.
 
 ### Array.prototype.includes
+
 This is a brand new array method that returns a boolean based on whether the specified element is found in the array.
 
 You can use it like so:
+
 ```js
-[1, 2, 3].includes(3)
+[1, 2, 3].includes(3);
 // => true
 ```
 
@@ -27,7 +29,7 @@ Now how is this different to using .indexOf?
 The primary difference is that .includes can find NaN whereas .indexOf cannot.
 
 ```js
-const arr = [NaN, 'a', 'b', 'c']
+const arr = [NaN, "a", "b", "c"];
 
 arr.includes(NaN);
 // => true
@@ -37,6 +39,7 @@ arr.indexOf(NaN);
 ```
 
 ### Exponentiation operator
+
 The second change is the introduction of an exponentiation operator.
 
 It is a short hand for `Math.pow`

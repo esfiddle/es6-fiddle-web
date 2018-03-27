@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.set = {};
 
-window.es6Example.set.code =
-`let x = new Set([1, 2, 3, 4, 4, 4, 5]);
+window.es6Example.set.code = `let x = new Set([1, 2, 3, 4, 4, 4, 5]);
 
 x.add(6);
 x.delete(2);
@@ -35,4 +34,4 @@ for (let value of x.entries()) {
   console.log(value);
 }`;
 
-window.es6Example.set.display = 'Set';
+window.es6Example.set.display = "Set";

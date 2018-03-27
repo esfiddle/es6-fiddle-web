@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.stringMethods = {};
 
-window.es6Example.stringMethods.code =
-`let coolString = 'Hello World';
+window.es6Example.stringMethods.code = `let coolString = 'Hello World';
 const secretMessage = '123jeffrey456';
 
 coolString += '!'.repeat(3);
@@ -21,4 +20,4 @@ if (secretMessage.includes('jeffrey')) {
   console.log('Message is for Jeffrey');
 }`;
 
-window.es6Example.stringMethods.display = 'String Methods';
+window.es6Example.stringMethods.display = "String Methods";
