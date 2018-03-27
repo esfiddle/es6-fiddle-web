@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.mathNumber = {};
 
-window.es6Example.mathNumber.code =
-`//can specify integers in binary and octal
+window.es6Example.mathNumber.code = `//can specify integers in binary and octal
 console.log("0b10 = ", 0b10);
 console.log("0o10 = ", 0o10);
 
@@ -25,4 +24,4 @@ console.log("Base 10 logarithm of 1000 = ", Math.log10(1000));
 console.log("Hypotenuse of 6 and 8 = ", Math.hypot(6, 8));
 `;
 
-window.es6Example.mathNumber.display = 'Math and Number features';
+window.es6Example.mathNumber.display = "Math and Number features";

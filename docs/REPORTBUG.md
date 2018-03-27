@@ -1,4 +1,3 @@
-
 # How to Report a Bug
 
 Thank you for taking the effort to report an issue.
@@ -28,6 +27,7 @@ Follow these steps to do it right:
 
 1. Go to our [gitHub Issues page](https://github.com/esfiddle/esfiddle/labels/up-for-grabs) and click on **New Issue**.
 2. **Have a useful title**
+
    * Write a meaningful title that describes the issue.
      Some good examples are _Logging in from the News and Field Guide pages doesn't redirect properly (using e-mail)_
      and _Typo: "for" instead of "while" loop_; bad examples include _A bug, HELP!!!11_ and _I found this bug in a Challenge_.
@@ -35,12 +35,12 @@ Follow these steps to do it right:
    * Keep the title relatively short, the description is for further information.
      One example is to shorten long Challenge names, so instead of writing _Test case bug in 'Challenge: Check Radio Buttons and Checkboxes by Default'_,
      you might want to write _Test case bug in 'Radio Buttons' Challenge_.
+
 3. In the body, **provide a link** to the page on which you encountered this issue.
 4. Describe the problem and provide steps so that a developer can try to replicate the issue. Include your operating system and browser version.
    * When referencing other issues or pull requests, simply write #issue/pr-number.
 5. **Take a screenshot** of the issue and include it in the post.
 6. Click **Submit New Issue** and you are done! You will be automatically subscribed to notifications for any updates or future comments.
-
 
 ---
 

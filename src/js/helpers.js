@@ -21,7 +21,7 @@ const $ = {
 
   addStyleTo(el, prop, value) {
     el.style[prop] = value; // eslint-disable-line
-  },
+  }
 };
 
 module.exports = $;

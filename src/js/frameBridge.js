@@ -3,27 +3,27 @@
  * back and forth between the main window and the sandbox
  */
 
-import $ from './helpers';
+import $ from "./helpers";
 
 class FrameBridge {
   constructor(selector) {
     this.sandbox = $.getElement(selector).contentWindow;
 
     // register to receive load notification from child
-    window.addEventListener('message', this._childLoaded.bind(this));
+    window.addEventListener("message", this._childLoaded.bind(this));
 
     // buffer all calls to this.send until iframe signals that it has loaded
     /* eslint-disable */
-    this.send = (function (orig, that) {
+    this.send = (function(orig, that) {
       const buffer = [];
 
       function sendProxy(...args) {
         buffer.push(args);
       }
 
-      sendProxy.restore = function () {
+      sendProxy.restore = function() {
         for (let i = 0; i < buffer.length; i++) {
-          orig(...buffer[i])
+          orig(...buffer[i]);
         }
 
         // after all the calls restore the original function
@@ -31,7 +31,7 @@ class FrameBridge {
       };
 
       return sendProxy;
-    }(this.send.bind(this), this));
+    })(this.send.bind(this), this);
     /* eslint-enable */
   }
 
@@ -57,9 +57,9 @@ class FrameBridge {
    */
   send(type, data) {
     // Todo: Maybe we should replace the wildcard with some fixed origin
-    this.sandbox.postMessage({ type, data }, '*');
+    this.sandbox.postMessage({ type, data }, "*");
   }
 }
 
 // export a Singleton instance since there should only be one channel for communication
-module.exports = new FrameBridge('.result');
+module.exports = new FrameBridge(".result");

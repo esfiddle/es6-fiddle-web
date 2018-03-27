@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.arrayMethods = {};
 
-window.es6Example.arrayMethods.code =
-`// Static Methods
+window.es6Example.arrayMethods.code = `// Static Methods
 const alphabet = Array.from('abcdefghijklmnopqrstuvwxyz');
 const sevenArray = Array.of(7);
 
@@ -36,4 +35,4 @@ greetingArray.fill(7);
 console.log(copiedArray);
 console.log(greetingArray);`;
 
-window.es6Example.arrayMethods.display = 'Array Methods';
+window.es6Example.arrayMethods.display = "Array Methods";

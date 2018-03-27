@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.cls = {};
 
-window.es6Example.cls.code =
-`class Polygon {
+window.es6Example.cls.code = `class Polygon {
   constructor(height, width) { //class constructor
     this.name = 'Polygon';
     this.height = height;
@@ -32,4 +31,4 @@ s.sayName();
 console.log(s.area);
 `;
 
-window.es6Example.cls.display = 'Classes and Inheritance';
+window.es6Example.cls.display = "Classes and Inheritance";

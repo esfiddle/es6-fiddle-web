@@ -1,8 +1,9 @@
 # Contributor Covenant Code of Conduct
 
 ## Notes
-If you see anyone who you feel breaks these rules or would generally like 
-to speak to us about any inclusion issues, please email us at [report@esfiddle.net](mailto:report@esfiddle.net). 
+
+If you see anyone who you feel breaks these rules or would generally like
+to speak to us about any inclusion issues, please email us at [report@esfiddle.net](mailto:report@esfiddle.net).
 This email address will go to the project maintainers for review.
 
 ## Our Pledge
@@ -28,7 +29,7 @@ include:
 Examples of unacceptable behavior by participants include:
 
 * The use of sexualized language or imagery and unwelcome sexual attention or
-advances
+  advances
 * Trolling, insulting/derogatory comments, and personal or political attacks
 * Public or private harassment
 * Publishing others' private information, such as a physical or electronic

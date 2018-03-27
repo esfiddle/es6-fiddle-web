@@ -1,40 +1,42 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const express = require('express');
-const compression = require('compression');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const flash = require('connect-flash');
-const passport = require('./auth');
-const helmet = require('helmet');
-const api = require('./api');
-const Poet = require('poet');
-const path = require('path');
+const express = require("express");
+const compression = require("compression");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
+const passport = require("./auth");
+const helmet = require("helmet");
+const api = require("./api");
+const Poet = require("poet");
+const path = require("path");
 
 const app = express();
 const port = Number(process.env.PORT || 5001);
 
 const poet = Poet(app, {
-  posts: './_posts',
+  posts: "./_posts",
   postsPerPage: 5,
-  metaFormat: 'json',
+  metaFormat: "json",
   routes: {
-    '/blog/:post': 'blog/post',
-    '/tags/:tag': 'blog/tag',
-    '/categories/:category': 'blog/category',
-    '/blog/:page': 'blog/page',
-  },
+    "/blog/:post": "blog/post",
+    "/tags/:tag": "blog/tag",
+    "/categories/:category": "blog/category",
+    "/blog/:page": "blog/page"
+  }
 });
 
-const routeStatic = require('./routes/static');
-const routeIndex = require('./routes/index');
-const routeProfile = require('./routes/profile');
-const routeAuth = require('./routes/auth');
+const routeStatic = require("./routes/static");
+const routeIndex = require("./routes/index");
+const routeProfile = require("./routes/profile");
+const routeAuth = require("./routes/auth");
 
 app.use(compression());
 app.use(bodyParser.json());
 app.use(flash());
-app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(
+  session({ secret: "keyboard cat", resave: false, saveUninitialized: false })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -42,19 +44,20 @@ app.use(passport.session());
 app.use(helmet());
 
 app.use((req, res, next) => {
-  if (req.url.match(/^\/(images|lib\/babel)\/.+/)
-    || req.url.match(/^\/(src\/es6-fiddle|src\/authenticated).+/)
-    || req.url.match(/^\/(authenticated)/)
+  if (
+    req.url.match(/^\/(images|lib\/babel)\/.+/) ||
+    req.url.match(/^\/(src\/es6-fiddle|src\/authenticated).+/) ||
+    req.url.match(/^\/(authenticated)/)
   ) {
-    res.setHeader('Cache-Control', 'public, max-age=2628000');
+    res.setHeader("Cache-Control", "public, max-age=2628000");
   }
   next();
 });
 
 poet.init();
 
-app.set('views', `${path.resolve('./')}/views`);
-app.set('view engine', 'ejs');
+app.set("views", `${path.resolve("./")}/views`);
+app.set("view engine", "ejs");
 
 routeAuth(app);
 routeProfile(app);

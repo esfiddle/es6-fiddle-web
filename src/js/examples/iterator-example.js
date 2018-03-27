@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.iterator = {};
 
-window.es6Example.iterator.code =
-`//new for-of loop allows iteration over built-in iterables like arrays
+window.es6Example.iterator.code = `//new for-of loop allows iteration over built-in iterables like arrays
 let array = [1, 2, 3, 4, 5];
 let sum = 0;
 
@@ -31,4 +30,4 @@ for (let v of newArray) {
     console.log(v);
 }`;
 
-window.es6Example.iterator.display = 'Iterators';
+window.es6Example.iterator.display = "Iterators";

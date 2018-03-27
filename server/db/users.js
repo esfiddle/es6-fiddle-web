@@ -1,4 +1,4 @@
-const mongoose = require('./mongoose');
+const mongoose = require("./mongoose");
 
 const { Schema } = mongoose;
 
@@ -16,41 +16,43 @@ const usersSchema = new Schema({
   public_gists: Number,
   accessToken: String,
   totalFiddles: Number,
-  startedFiddles: [String],
+  startedFiddles: [String]
 });
 
-usersSchema.statics.findOrCreate = function (profile, accessToken) {
+usersSchema.statics.findOrCreate = function(profile, accessToken) {
   const Users = this;
-  return Users.findOne({ githubId: profile.id }).then((user) => {
-    if (user) {
-      // Updating accessToken is necessary for exportAsGist
-      if (user.accessToken !== accessToken) {
-        const updatedUser = user;
-        updatedUser.accessToken = accessToken;
-        return updatedUser.save();
+  return Users.findOne({ githubId: profile.id })
+    .then(user => {
+      if (user) {
+        // Updating accessToken is necessary for exportAsGist
+        if (user.accessToken !== accessToken) {
+          const updatedUser = user;
+          updatedUser.accessToken = accessToken;
+          return updatedUser.save();
+        }
+        return Promise.resolve(user);
       }
-      return Promise.resolve(user);
-    }
 
-    const NewUser = new Users({
-      githubId: profile.id,
-      login: profile.login,
-      name: profile.name,
-      email: profile.email ? profile.email[0] : null,
-      avatar_url: profile.avatar_url,
-      url: profile.url,
-      html_url: profile.html_url,
-      location: profile.location,
-      bio: profile.bio,
-      public_repos: profile.public_repos,
-      public_gists: profile.public_gists,
-      accessToken,
-    });
+      const NewUser = new Users({
+        githubId: profile.id,
+        login: profile.login,
+        name: profile.name,
+        email: profile.email ? profile.email[0] : null,
+        avatar_url: profile.avatar_url,
+        url: profile.url,
+        html_url: profile.html_url,
+        location: profile.location,
+        bio: profile.bio,
+        public_repos: profile.public_repos,
+        public_gists: profile.public_gists,
+        accessToken
+      });
 
-    return NewUser.save();
-  }).catch(err => Promise.reject(err));
+      return NewUser.save();
+    })
+    .catch(err => Promise.reject(err));
 };
 
-const Users = mongoose.model('Users', usersSchema);
+const Users = mongoose.model("Users", usersSchema);
 
 module.exports = Users;

@@ -3,11 +3,11 @@
  * License: MIT
  */
 
-const passport = require('passport');
-const util = require('util');
+const passport = require("passport");
+const util = require("util");
 
 function StrategyMock(options, verify) {
-  this.name = 'mock';
+  this.name = "mock";
   this.passAuthentication = options.passAuthentication || true;
   this.userId = options.userId || 1;
   this.verify = verify;
@@ -28,7 +28,7 @@ StrategyMock.prototype.authenticate = function authenticate() {
       }
     });
   } else {
-    this.fail('Unauthorized');
+    this.fail("Unauthorized");
   }
 };
 

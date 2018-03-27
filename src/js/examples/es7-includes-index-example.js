@@ -2,8 +2,7 @@
 window.es7Example = window.es7Example || {};
 window.es7Example.arrayIndex = {};
 
-window.es7Example.arrayIndex.code =
-`let array = ["a", "b", "c", undefined, "e", NaN];
+window.es7Example.arrayIndex.code = `let array = ["a", "b", "c", undefined, "e", NaN];
 
 //array includes with fromIndex argument, no argument is equivalent to 0
 console.log(array.includes("a", 0));
@@ -20,4 +19,4 @@ console.log(array.includes(undefined, 4));
 //able to detect NaN array elements
 console.log(array.includes(NaN));`;
 
-window.es7Example.arrayIndex.display = 'Array Includes: Search from Index';
+window.es7Example.arrayIndex.display = "Array Includes: Search from Index";

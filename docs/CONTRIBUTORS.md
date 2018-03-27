@@ -1,5 +1,5 @@
-ESFiddle contributors
-===
+# ESFiddle contributors
+
 ESFiddle couldn't be done without the help of these amazing people
 
 * [Josh Ghent](https://github.com/joshghent)

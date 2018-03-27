@@ -2,8 +2,7 @@
 window.es6Example = window.es6Example || {};
 window.es6Example.blockScope = {};
 
-window.es6Example.blockScope.code =
-`var x = 0;
+window.es6Example.blockScope.code = `var x = 0;
 
 for (let i = 0; i < 10; i++) {
     x += 10;
@@ -18,4 +17,4 @@ try {
 }
 `;
 
-window.es6Example.blockScope.display = 'Block Scope';
+window.es6Example.blockScope.display = "Block Scope";

@@ -10,4 +10,4 @@ window.es6Example.destructureLevel2.code = `
     console.log(obj.number, obj.name, obj.pet);
 `;
 
-window.es6Example.destructureLevel2.display = 'Destructured Objects - Level 2';
+window.es6Example.destructureLevel2.display = "Destructured Objects - Level 2";
