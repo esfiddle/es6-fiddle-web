@@ -44,7 +44,7 @@
     "grunt-browserify": "^5.0.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-imagemin": "^2.0.1",
-    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^20.1.0",
