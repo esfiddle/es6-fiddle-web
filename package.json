@@ -31,7 +31,7 @@
     "connect-flash": "^0.1.1",
     "dotenv": "^5.0.0",
     "ejs": "^2.5.5",
-    "eslint": "^4.17.0",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
