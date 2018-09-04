@@ -46,7 +46,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-less": "^1.4.0",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^21.0.0",
     "grunt-express-server": "0.5.3",
