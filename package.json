@@ -23,7 +23,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babelify": "^8.0.0",
+    "babelify": "^10.0.0",
     "body-parser": "^1.15.2",
     "browserify": "16.2.0",
     "codemirror": "^5.24.2",
