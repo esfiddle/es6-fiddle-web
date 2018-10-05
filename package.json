@@ -40,7 +40,7 @@
     "express-session": "^1.15.0",
     "grunt": "^1.0.1",
     "grunt-assets-inline": "0.1.19",
-    "grunt-babel": "7.0.0",
+    "grunt-babel": "8.0.0",
     "grunt-browser-sync": "2.2.0",
     "grunt-browserify": "^5.0.0",
     "grunt-cli": "^1.2.0",
