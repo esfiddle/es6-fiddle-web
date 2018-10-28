@@ -9,6 +9,7 @@ import {
 import createHistory from "history/createBrowserHistory";
 const history = createHistory();
 
+import About from './components/About/About';
 import Editor from './components/Editor/Editor';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -39,6 +40,7 @@ class App extends React.Component<{}, IAppState> {
 					<Header />
 					<Switch>
 						<Route exact={true} path="/" component={Landing} />
+						<Route path="/about" component={About} />
 						<Route path="/editor" component={Editor} />
 						<Route component={NotFound} />
 					</Switch>
