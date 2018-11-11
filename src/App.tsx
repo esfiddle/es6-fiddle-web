@@ -16,6 +16,9 @@ import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
 import NotFound from './components/NotFound/NotFound';
 
+// Styles
+import './App.css';
+
 interface IAppState {
 	user?: object
 }
@@ -38,12 +41,14 @@ class App extends React.Component<{}, IAppState> {
 			<Router history={history}>
 				<>
 					<Header />
-					<Switch>
-						<Route exact={true} path="/" component={Landing} />
-						<Route path="/about" component={About} />
-						<Route path="/editor" component={Editor} />
-						<Route component={NotFound} />
-					</Switch>
+						<main className="main">
+							<Switch>
+								<Route exact={true} path="/" component={Landing} />
+								<Route path="/about" component={About} />
+								<Route path="/editor" component={Editor} />
+								<Route component={NotFound} />
+							</Switch>
+						</main>
 					<Footer />
 				</>
 			</Router>

@@ -1,6 +1,7 @@
 footer {
 	position: relative;
 	display: flex;
+	margin-top: auto;
 	background: var(--light);
 	align-items: center;
 }

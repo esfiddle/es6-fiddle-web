@@ -10,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Didact Gothic', sans-serif;
-  padding-top: 60px;
   color: #555;
   /*overflow-x: hidden;*/
 }
@@ -19,4 +18,11 @@ body {
 }
 .spacer {
 	flex: 1 1 auto;
+}
+
+#root {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
