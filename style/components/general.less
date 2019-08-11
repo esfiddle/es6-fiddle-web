@@ -7,7 +7,8 @@ body, html {
   height: 100%;
   font-family: @font-family;
   background: @bg;
-  font-size: 16px;
+  /* This allows to use decimal rem units as pixels (i.e 1.6rem = 16px) */
+	font-size: 62.5%;
   line-height: 24px;
   overflow-x: hidden;
 }
@@ -4886,7 +4887,7 @@ button[data-balloon] {
   border-radius: 4px;
   color: #fff;
   content: attr(data-balloon);
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: .5em 1em;
   white-space: nowrap;
   margin-bottom: 11px;

@@ -10,6 +10,7 @@
  *   - make it safer to use
 */
 
+import "babel-polyfill";
 var MicroEvent	= function(){};
 MicroEvent.prototype	= {
 	on	: function(event, fct){
