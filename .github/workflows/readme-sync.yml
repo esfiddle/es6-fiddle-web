@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: meeDamian/sync-readme@v1.0.4
+      with:
+        user: joshghent
+        pass: ${{ secrets.DOCKER_PASS }}
+        slug: joshghent/esfiddle
+        readme: README.md
+        description: ESFiddle Server and API 
+
