@@ -20,7 +20,13 @@ git clone git@github.com:esfiddle/esfiddle.git
 # Change directory
 cd esfiddle
 
-# Update PRIVATE section in sample.env file and rename it to '.env'
+# Update the PRIVATE section in sample.env file. 
+# Replace the text 'keyboard-cat' set for SESSION_SECRET to a value generated from the following site:
+```
+[RANDOM.ORG](https://www.random.org/passwords/?num=1&len=10&format=html&rnd=new)
+
+```bash
+# rename the sample.env file to '.env'
 cp sample.env ./.env
 
 # Open a new terminal window and start MongoDB
