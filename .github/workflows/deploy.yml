@@ -77,5 +77,5 @@ jobs:
           echo VERSION=$VERSION
           echo DATETIME=$DATETIME
 
-          docker build . --file Dockerfile --tag $IMAGE_ID:$DATETIME --tag $IMAGE_ID:$DATETIME
+          docker build . --file Dockerfile --tag $IMAGE_ID:$DATETIME --tag $IMAGE_ID:$VERSION
           docker push $IMAGE_ID
