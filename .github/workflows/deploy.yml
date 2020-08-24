@@ -54,10 +54,7 @@ jobs:
         
       - uses: actions/checkout@v2
 
-      - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME:$(date +%s)
-
-      - name: Push image
+      - name: Build and Push image
         run: |
           IMAGE_ID=$GIT_REGISTRY/$REPO_NAME/$IMAGE_NAME
 
@@ -72,9 +69,13 @@ jobs:
 
           # Use Docker `latest` tag convention
           [ "$VERSION" == "develop" ] && VERSION=latest
+          
+          #Date Time
+          $DATETIME=$(date +%s)
 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
+          echo DATETIME=$DATETIME
 
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+          docker build . --file Dockerfile --tag $IMAGE_ID:$DATETIME --tag $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID
