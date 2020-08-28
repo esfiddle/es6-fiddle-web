@@ -71,7 +71,7 @@ jobs:
           [ "$VERSION" == "develop" ] && VERSION=latest
           
           #Date Time
-          $DATETIME=$(date +%s)
+          DATETIME=$(date +%s)
 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
