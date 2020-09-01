@@ -45,13 +45,6 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      - name: Docker Login
-        uses: azure/docker-login@v1
-        with:
-          login-server: $GIT_REGISTRY
-          username: $GITHUB_ACTOR
-          password: ${{ secrets.GITHUB_TOKEN }}
-        
       - uses: actions/checkout@v2
 
       - name: Build and Push image
@@ -75,6 +68,8 @@ jobs:
 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
+          
+          docker login $GIT_REGISTRY -u $GITHUB_ACTOR -p ${{ secrets.GITHUB_TOKEN }}
 
           docker build . --file Dockerfile --tag $IMAGE_ID:$DATETIME --tag $IMAGE_ID:$VERSION
           docker push $IMAGE_ID
