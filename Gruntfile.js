@@ -52,6 +52,7 @@
         compile: {
           files: {
             'dist/src/authenticated.js': ['dist/src/authenticated.js'],
+            'dist/src/es6-fiddle.js': ['dist/src/es6-fiddle.js'],
           },
         },
       },
