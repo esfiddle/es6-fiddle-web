@@ -60,7 +60,7 @@
     "load-grunt-tasks": "^4.0.0",
     "mongodb": "^3.0.2",
     "mongoose": "^5.7.5",
-    "node-fetch": "^2.0.0",
+    "node-fetch": "^2.6.1",
     "passport": "^0.4.0",
     "passport-github2": "^0.1.10",
     "poet": "^3.0.0",
