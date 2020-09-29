@@ -18,27 +18,36 @@ function napTime(duration) {
   });
 }
 
+
 /* 
-  Await requires a Promise to be returned and
-  can only be used inside an async function.
-*/ 
+  Await requires a Promise to be returned which we can await 
+   and store in const variable and make use of it, as below with `try-catch-finally`
+*/
 async function getFood() {
-  console.log('Blast off 🚀');
+  console.log("Blast off 🚀");
 
-  await fetchMeat()
-    .then((bacon) => {
-      console.log(bacon);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-
+  try {
+    const bacon = await fetchMeat();
+    await console.log(bacon, "bacon from the await-ed api");
+  } catch (err) {
+    console.error(
+      `Darn! cant get it right now...please try after sometime or call us at youknowitserror@baconfactor.com with this error ${err}`
+    );
+  } finally {
+    console.log("finally the i got the bacon 🥓");
+  }
   // napTime returns a promise after given duration.
-  await napTime(1000).then((res) => {
-    console.log(res);
-  });
+  try {
+    const napTimeResponse = await napTime(1000);
+    await console.log(napTimeResponse)
+    await console.log("Await for me 👋");
 
-  console.log('Await for me 👋');
+  } catch (err) {
+    console.error(
+      `Woah, not good, please call us why you are not allowed to take a 🛌 with this error - ${err}`
+    );
+  }
+
 }
 
 getFood();
