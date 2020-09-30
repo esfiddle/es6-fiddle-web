@@ -21,7 +21,7 @@ function napTime(duration) {
 
 /* 
   Await requires a Promise to be returned which we can await 
-   and store in const variable and make use of it, as below with `try-catch-finally`
+  and store in const variable and make use of it, as below with try-catch-finally
 */
 async function getFood() {
   console.log("Blast off 🚀");
