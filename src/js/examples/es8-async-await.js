@@ -19,16 +19,18 @@ function napTime(duration) {
 }
 
 
-/* 
-  Await requires a Promise to be returned which we can await 
-  and store in const variable and make use of it, as below with try-catch-finally
+/*
+ After ES6 and ES7 came ES8. This specification introduced two features, async functions and await operator. 
+ Asynchronous functions, along with await.
+ finally made working with asynchronous code and promises much easier. They marked the end of callback hell.
+ Using .then with async-await is anti -pattern as its again tend to make multiple .then call back hell (.then Pyramid issue)
 */
 async function getFood() {
   console.log("Blast off 🚀");
 
   try {
     const bacon = await fetchMeat();
-    await console.log(bacon, "bacon from the await-ed api");
+    console.log(bacon, "bacon from the await-ed api");
   } catch (err) {
     console.error(
       `Darn! cant get it right now...please try after sometime or call us at youknowitserror@baconfactor.com with this error ${err}`
@@ -39,16 +41,15 @@ async function getFood() {
   // napTime returns a promise after given duration.
   try {
     const napTimeResponse = await napTime(1000);
-    await console.log(napTimeResponse)
-    await console.log("Await for me 👋");
-
+    console.log(napTimeResponse);
+    console.log("Await for me 👋");
   } catch (err) {
     console.error(
       `Woah, not good, please call us why you are not allowed to take a 🛌 with this error - ${err}`
     );
   }
-
 }
+
 
 getFood();
 
