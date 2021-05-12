@@ -26,7 +26,7 @@
     "babelify": "^8.0.0",
     "body-parser": "^1.15.2",
     "browserify": "16.2.0",
-    "codemirror": "^5.24.2",
+    "codemirror": "^5.58.2",
     "compression": "^1.6.2",
     "connect-flash": "^0.1.1",
     "dotenv": "^6.0.0",
